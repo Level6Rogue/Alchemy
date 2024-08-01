@@ -1,0 +1,5 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="True">
+    <Style src="project://database/Assets/Tweaks/Editor-List-Block-Style.uss?fileID=7433441132597879392&amp;guid=205e004721deb3c4c874463805d1d81e&amp;type=3#Editor-List-Block-Style" />
+    <Style src="project://database/Assets/Tweaks/Editor-ReferenceField-Block-Style.uss?fileID=7433441132597879392&amp;guid=8ead94330b1e42244b90074c50333d49&amp;type=3#Editor-ReferenceField-Block-Style" />
+    <ui:ListView show-add-remove-footer="true" show-border="true" show-foldout-header="true" header-title="Test Header" class="list-view-header-block" />
+</ui:UXML>
