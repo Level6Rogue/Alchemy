@@ -1,0 +1,48 @@
+SerializeReferenceField.reference-field-block {
+    margin-bottom: 2px;
+}
+
+SerializeReferenceField.reference-field-block > Foldout > Toggle {
+    padding-top: 3px;
+    padding-right: 3px;
+    padding-bottom: 3px;
+    padding-left: 3px;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    border-top-width: 1px;
+    border-right-width: 1px;
+    border-bottom-width: 1px;
+    border-left-width: 1px;
+    border-left-color: rgb(26, 26, 26);
+    border-right-color: rgb(26, 26, 26);
+    border-top-color: rgb(26, 26, 26);
+    border-bottom-color: rgb(26, 26, 26);
+    margin-left: 0;
+    margin-right: 0;
+    margin-bottom: -1px;
+}
+
+SerializeReferenceField.reference-field-block > Foldout > #unity-content {
+    padding-top: 2px;
+    padding-right: 8px;
+    padding-bottom: 2px;
+    padding-left: 8px;
+    border-top-width: 1px;
+    border-right-width: 1px;
+    border-bottom-width: 1px;
+    border-left-width: 1px;
+    border-bottom-right-radius: 4px;
+    border-bottom-left-radius: 4px;
+    border-left-color: rgb(26, 26, 26);
+    border-right-color: rgb(26, 26, 26);
+    border-top-color: rgb(26, 26, 26);
+    border-bottom-color: rgb(26, 26, 26);
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 0;
+}
+
+SerializeReferenceField.reference-field-block > .unity-imgui-container {
+    right: 4px;
+    top: 4px;
+}
