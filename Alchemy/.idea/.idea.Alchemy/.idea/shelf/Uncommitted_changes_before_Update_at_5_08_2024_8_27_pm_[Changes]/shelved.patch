@@ -1,0 +1,230 @@
+Index: Assets/Tweaks/Editor.meta
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/Assets/Tweaks/Editor.meta b/Assets/Tweaks/Editor.meta
+new file mode 100644
+--- /dev/null	(date 1722853558423)
++++ b/Assets/Tweaks/Editor.meta	(date 1722853558423)
+@@ -0,0 +1,3 @@
++fileFormatVersion: 2
++guid: 47990d3d2b67474f96049582fc9360c8
++timeCreated: 1722588671
+\ No newline at end of file
+Index: Packages/packages-lock.json
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>{\r\n  \"dependencies\": {\r\n    \"com.unity.burst\": {\r\n      \"version\": \"1.8.7\",\r\n      \"depth\": 1,\r\n      \"source\": \"registry\",\r\n      \"dependencies\": {\r\n        \"com.unity.mathematics\": \"1.2.1\"\r\n      },\r\n      \"url\": \"https://packages.unity.com\"\r\n    },\r\n    \"com.unity.collab-proxy\": {\r\n      \"version\": \"2.2.0\",\r\n      \"depth\": 0,\r\n      \"source\": \"registry\",\r\n      \"dependencies\": {},\r\n      \"url\": \"https://packages.unity.com\"\r\n    },\r\n    \"com.unity.collections\": {\r\n      \"version\": \"2.1.4\",\r\n      \"depth\": 1,\r\n      \"source\": \"registry\",\r\n      \"dependencies\": {\r\n        \"com.unity.burst\": \"1.8.4\",\r\n        \"com.unity.modules.unityanalytics\": \"1.0.0\",\r\n        \"com.unity.nuget.mono-cecil\": \"1.11.4\"\r\n      },\r\n      \"url\": \"https://packages.unity.com\"\r\n    },\r\n    \"com.unity.editorcoroutines\": {\r\n      \"version\": \"1.0.0\",\r\n      \"depth\": 1,\r\n      \"source\": \"registry\",\r\n      \"dependencies\": {},\r\n      \"url\": \"https://packages.unity.com\"\r\n    },\r\n    \"com.unity.ext.nunit\": {\r\n      \"version\": \"1.0.6\",\r\n      \"depth\": 2,\r\n      \"source\": \"registry\",\r\n      \"dependencies\": {},\r\n      \"url\": \"https://packages.unity.com\"\r\n    },\r\n    \"com.unity.feature.development\": {\r\n      \"version\": \"1.0.1\",\r\n      \"depth\": 0,\r\n      \"source\": \"builtin\",\r\n      \"dependencies\": {\r\n        \"com.unity.ide.visualstudio\": \"2.0.18\",\r\n        \"com.unity.ide.rider\": \"3.0.24\",\r\n        \"com.unity.ide.vscode\": \"1.2.5\",\r\n        \"com.unity.editorcoroutines\": \"1.0.0\",\r\n        \"com.unity.performance.profile-analyzer\": \"1.2.2\",\r\n        \"com.unity.test-framework\": \"1.1.33\",\r\n        \"com.unity.testtools.codecoverage\": \"1.2.4\"\r\n      }\r\n    },\r\n    \"com.unity.ide.rider\": {\r\n      \"version\": \"3.0.24\",\r\n      \"depth\": 1,\r\n      \"source\": \"registry\",\r\n      \"dependencies\": {\r\n        \"com.unity.ext.nunit\": \"1.0.6\"\r\n      },\r\n      \"url\": \"https://packages.unity.com\"\r\n    },\r\n    \"com.unity.ide.visualstudio\": {\r\n      \"version\": \"2.0.22\",\r\n      \"depth\": 0,\r\n      \"source\": \"registry\",\r\n      \"dependencies\": {\r\n        \"com.unity.test-framework\": \"1.1.9\"\r\n      },\r\n      \"url\": \"https://packages.unity.com\"\r\n    },\r\n    \"com.unity.ide.vscode\": {\r\n      \"version\": \"1.2.5\",\r\n      \"depth\": 1,\r\n      \"source\": \"registry\",\r\n      \"dependencies\": {},\r\n      \"url\": \"https://packages.unity.com\"\r\n    },\r\n    \"com.unity.mathematics\": {\r\n      \"version\": \"1.2.6\",\r\n      \"depth\": 2,\r\n      \"source\": \"registry\",\r\n      \"dependencies\": {},\r\n      \"url\": \"https://packages.unity.com\"\r\n    },\r\n    \"com.unity.nuget.mono-cecil\": {\r\n      \"version\": \"1.11.4\",\r\n      \"depth\": 2,\r\n      \"source\": \"registry\",\r\n      \"dependencies\": {},\r\n      \"url\": \"https://packages.unity.com\"\r\n    },\r\n    \"com.unity.nuget.newtonsoft-json\": {\r\n      \"version\": \"3.2.1\",\r\n      \"depth\": 0,\r\n      \"source\": \"registry\",\r\n      \"dependencies\": {},\r\n      \"url\": \"https://packages.unity.com\"\r\n    },\r\n    \"com.unity.performance.profile-analyzer\": {\r\n      \"version\": \"1.2.2\",\r\n      \"depth\": 1,\r\n      \"source\": \"registry\",\r\n      \"dependencies\": {},\r\n      \"url\": \"https://packages.unity.com\"\r\n    },\r\n    \"com.unity.serialization\": {\r\n      \"version\": \"3.1.1\",\r\n      \"depth\": 0,\r\n      \"source\": \"registry\",\r\n      \"dependencies\": {\r\n        \"com.unity.collections\": \"2.1.4\",\r\n        \"com.unity.burst\": \"1.7.2\"\r\n      },\r\n      \"url\": \"https://packages.unity.com\"\r\n    },\r\n    \"com.unity.settings-manager\": {\r\n      \"version\": \"2.0.1\",\r\n      \"depth\": 2,\r\n      \"source\": \"registry\",\r\n      \"dependencies\": {},\r\n      \"url\": \"https://packages.unity.com\"\r\n    },\r\n    \"com.unity.sysroot\": {\r\n      \"version\": \"2.0.7\",\r\n      \"depth\": 1,\r\n      \"source\": \"registry\",\r\n      \"dependencies\": {},\r\n      \"url\": \"https://packages.unity.com\"\r\n    },\r\n    \"com.unity.sysroot.linux-x86_64\": {\r\n      \"version\": \"2.0.6\",\r\n      \"depth\": 1,\r\n      \"source\": \"registry\",\r\n      \"dependencies\": {\r\n        \"com.unity.sysroot\": \"2.0.7\"\r\n      },\r\n      \"url\": \"https://packages.unity.com\"\r\n    },\r\n    \"com.unity.test-framework\": {\r\n      \"version\": \"1.1.33\",\r\n      \"depth\": 1,\r\n      \"source\": \"registry\",\r\n      \"dependencies\": {\r\n        \"com.unity.ext.nunit\": \"1.0.6\",\r\n        \"com.unity.modules.imgui\": \"1.0.0\",\r\n        \"com.unity.modules.jsonserialize\": \"1.0.0\"\r\n      },\r\n      \"url\": \"https://packages.unity.com\"\r\n    },\r\n    \"com.unity.testtools.codecoverage\": {\r\n      \"version\": \"1.2.4\",\r\n      \"depth\": 1,\r\n      \"source\": \"registry\",\r\n      \"dependencies\": {\r\n        \"com.unity.test-framework\": \"1.0.16\",\r\n        \"com.unity.settings-manager\": \"1.0.1\"\r\n      },\r\n      \"url\": \"https://packages.unity.com\"\r\n    },\r\n    \"com.unity.textmeshpro\": {\r\n      \"version\": \"3.0.6\",\r\n      \"depth\": 0,\r\n      \"source\": \"registry\",\r\n      \"dependencies\": {\r\n        \"com.unity.ugui\": \"1.0.0\"\r\n      },\r\n      \"url\": \"https://packages.unity.com\"\r\n    },\r\n    \"com.unity.timeline\": {\r\n      \"version\": \"1.7.5\",\r\n      \"depth\": 0,\r\n      \"source\": \"registry\",\r\n      \"dependencies\": {\r\n        \"com.unity.modules.director\": \"1.0.0\",\r\n        \"com.unity.modules.animation\": \"1.0.0\",\r\n        \"com.unity.modules.audio\": \"1.0.0\",\r\n        \"com.unity.modules.particlesystem\": \"1.0.0\"\r\n      },\r\n      \"url\": \"https://packages.unity.com\"\r\n    },\r\n    \"com.unity.toolchain.macos-arm64-linux-x86_64\": {\r\n      \"version\": \"2.0.0\",\r\n      \"depth\": 0,\r\n      \"source\": \"registry\",\r\n      \"dependencies\": {\r\n        \"com.unity.sysroot\": \"2.0.7\",\r\n        \"com.unity.sysroot.linux-x86_64\": \"2.0.6\"\r\n      },\r\n      \"url\": \"https://packages.unity.com\"\r\n    },\r\n    \"com.unity.ugui\": {\r\n      \"version\": \"1.0.0\",\r\n      \"depth\": 0,\r\n      \"source\": \"builtin\",\r\n      \"dependencies\": {\r\n        \"com.unity.modules.ui\": \"1.0.0\",\r\n        \"com.unity.modules.imgui\": \"1.0.0\"\r\n      }\r\n    },\r\n    \"com.unity.visualscripting\": {\r\n      \"version\": \"1.8.0\",\r\n      \"depth\": 0,\r\n      \"source\": \"registry\",\r\n      \"dependencies\": {\r\n        \"com.unity.ugui\": \"1.0.0\",\r\n        \"com.unity.modules.jsonserialize\": \"1.0.0\"\r\n      },\r\n      \"url\": \"https://packages.unity.com\"\r\n    },\r\n    \"com.unity.modules.ai\": {\r\n      \"version\": \"1.0.0\",\r\n      \"depth\": 0,\r\n      \"source\": \"builtin\",\r\n      \"dependencies\": {}\r\n    },\r\n    \"com.unity.modules.androidjni\": {\r\n      \"version\": \"1.0.0\",\r\n      \"depth\": 0,\r\n      \"source\": \"builtin\",\r\n      \"dependencies\": {}\r\n    },\r\n    \"com.unity.modules.animation\": {\r\n      \"version\": \"1.0.0\",\r\n      \"depth\": 0,\r\n      \"source\": \"builtin\",\r\n      \"dependencies\": {}\r\n    },\r\n    \"com.unity.modules.assetbundle\": {\r\n      \"version\": \"1.0.0\",\r\n      \"depth\": 0,\r\n      \"source\": \"builtin\",\r\n      \"dependencies\": {}\r\n    },\r\n    \"com.unity.modules.audio\": {\r\n      \"version\": \"1.0.0\",\r\n      \"depth\": 0,\r\n      \"source\": \"builtin\",\r\n      \"dependencies\": {}\r\n    },\r\n    \"com.unity.modules.cloth\": {\r\n      \"version\": \"1.0.0\",\r\n      \"depth\": 0,\r\n      \"source\": \"builtin\",\r\n      \"dependencies\": {\r\n        \"com.unity.modules.physics\": \"1.0.0\"\r\n      }\r\n    },\r\n    \"com.unity.modules.director\": {\r\n      \"version\": \"1.0.0\",\r\n      \"depth\": 0,\r\n      \"source\": \"builtin\",\r\n      \"dependencies\": {\r\n        \"com.unity.modules.audio\": \"1.0.0\",\r\n        \"com.unity.modules.animation\": \"1.0.0\"\r\n      }\r\n    },\r\n    \"com.unity.modules.imageconversion\": {\r\n      \"version\": \"1.0.0\",\r\n      \"depth\": 0,\r\n      \"source\": \"builtin\",\r\n      \"dependencies\": {}\r\n    },\r\n    \"com.unity.modules.imgui\": {\r\n      \"version\": \"1.0.0\",\r\n      \"depth\": 0,\r\n      \"source\": \"builtin\",\r\n      \"dependencies\": {}\r\n    },\r\n    \"com.unity.modules.jsonserialize\": {\r\n      \"version\": \"1.0.0\",\r\n      \"depth\": 0,\r\n      \"source\": \"builtin\",\r\n      \"dependencies\": {}\r\n    },\r\n    \"com.unity.modules.particlesystem\": {\r\n      \"version\": \"1.0.0\",\r\n      \"depth\": 0,\r\n      \"source\": \"builtin\",\r\n      \"dependencies\": {}\r\n    },\r\n    \"com.unity.modules.physics\": {\r\n      \"version\": \"1.0.0\",\r\n      \"depth\": 0,\r\n      \"source\": \"builtin\",\r\n      \"dependencies\": {}\r\n    },\r\n    \"com.unity.modules.physics2d\": {\r\n      \"version\": \"1.0.0\",\r\n      \"depth\": 0,\r\n      \"source\": \"builtin\",\r\n      \"dependencies\": {}\r\n    },\r\n    \"com.unity.modules.screencapture\": {\r\n      \"version\": \"1.0.0\",\r\n      \"depth\": 0,\r\n      \"source\": \"builtin\",\r\n      \"dependencies\": {\r\n        \"com.unity.modules.imageconversion\": \"1.0.0\"\r\n      }\r\n    },\r\n    \"com.unity.modules.subsystems\": {\r\n      \"version\": \"1.0.0\",\r\n      \"depth\": 1,\r\n      \"source\": \"builtin\",\r\n      \"dependencies\": {\r\n        \"com.unity.modules.jsonserialize\": \"1.0.0\"\r\n      }\r\n    },\r\n    \"com.unity.modules.terrain\": {\r\n      \"version\": \"1.0.0\",\r\n      \"depth\": 0,\r\n      \"source\": \"builtin\",\r\n      \"dependencies\": {}\r\n    },\r\n    \"com.unity.modules.terrainphysics\": {\r\n      \"version\": \"1.0.0\",\r\n      \"depth\": 0,\r\n      \"source\": \"builtin\",\r\n      \"dependencies\": {\r\n        \"com.unity.modules.physics\": \"1.0.0\",\r\n        \"com.unity.modules.terrain\": \"1.0.0\"\r\n      }\r\n    },\r\n    \"com.unity.modules.tilemap\": {\r\n      \"version\": \"1.0.0\",\r\n      \"depth\": 0,\r\n      \"source\": \"builtin\",\r\n      \"dependencies\": {\r\n        \"com.unity.modules.physics2d\": \"1.0.0\"\r\n      }\r\n    },\r\n    \"com.unity.modules.ui\": {\r\n      \"version\": \"1.0.0\",\r\n      \"depth\": 0,\r\n      \"source\": \"builtin\",\r\n      \"dependencies\": {}\r\n    },\r\n    \"com.unity.modules.uielements\": {\r\n      \"version\": \"1.0.0\",\r\n      \"depth\": 0,\r\n      \"source\": \"builtin\",\r\n      \"dependencies\": {\r\n        \"com.unity.modules.ui\": \"1.0.0\",\r\n        \"com.unity.modules.imgui\": \"1.0.0\",\r\n        \"com.unity.modules.jsonserialize\": \"1.0.0\"\r\n      }\r\n    },\r\n    \"com.unity.modules.umbra\": {\r\n      \"version\": \"1.0.0\",\r\n      \"depth\": 0,\r\n      \"source\": \"builtin\",\r\n      \"dependencies\": {}\r\n    },\r\n    \"com.unity.modules.unityanalytics\": {\r\n      \"version\": \"1.0.0\",\r\n      \"depth\": 0,\r\n      \"source\": \"builtin\",\r\n      \"dependencies\": {\r\n        \"com.unity.modules.unitywebrequest\": \"1.0.0\",\r\n        \"com.unity.modules.jsonserialize\": \"1.0.0\"\r\n      }\r\n    },\r\n    \"com.unity.modules.unitywebrequest\": {\r\n      \"version\": \"1.0.0\",\r\n      \"depth\": 0,\r\n      \"source\": \"builtin\",\r\n      \"dependencies\": {}\r\n    },\r\n    \"com.unity.modules.unitywebrequestassetbundle\": {\r\n      \"version\": \"1.0.0\",\r\n      \"depth\": 0,\r\n      \"source\": \"builtin\",\r\n      \"dependencies\": {\r\n        \"com.unity.modules.assetbundle\": \"1.0.0\",\r\n        \"com.unity.modules.unitywebrequest\": \"1.0.0\"\r\n      }\r\n    },\r\n    \"com.unity.modules.unitywebrequestaudio\": {\r\n      \"version\": \"1.0.0\",\r\n      \"depth\": 0,\r\n      \"source\": \"builtin\",\r\n      \"dependencies\": {\r\n        \"com.unity.modules.unitywebrequest\": \"1.0.0\",\r\n        \"com.unity.modules.audio\": \"1.0.0\"\r\n      }\r\n    },\r\n    \"com.unity.modules.unitywebrequesttexture\": {\r\n      \"version\": \"1.0.0\",\r\n      \"depth\": 0,\r\n      \"source\": \"builtin\",\r\n      \"dependencies\": {\r\n        \"com.unity.modules.unitywebrequest\": \"1.0.0\",\r\n        \"com.unity.modules.imageconversion\": \"1.0.0\"\r\n      }\r\n    },\r\n    \"com.unity.modules.unitywebrequestwww\": {\r\n      \"version\": \"1.0.0\",\r\n      \"depth\": 0,\r\n      \"source\": \"builtin\",\r\n      \"dependencies\": {\r\n        \"com.unity.modules.unitywebrequest\": \"1.0.0\",\r\n        \"com.unity.modules.unitywebrequestassetbundle\": \"1.0.0\",\r\n        \"com.unity.modules.unitywebrequestaudio\": \"1.0.0\",\r\n        \"com.unity.modules.audio\": \"1.0.0\",\r\n        \"com.unity.modules.assetbundle\": \"1.0.0\",\r\n        \"com.unity.modules.imageconversion\": \"1.0.0\"\r\n      }\r\n    },\r\n    \"com.unity.modules.vehicles\": {\r\n      \"version\": \"1.0.0\",\r\n      \"depth\": 0,\r\n      \"source\": \"builtin\",\r\n      \"dependencies\": {\r\n        \"com.unity.modules.physics\": \"1.0.0\"\r\n      }\r\n    },\r\n    \"com.unity.modules.video\": {\r\n      \"version\": \"1.0.0\",\r\n      \"depth\": 0,\r\n      \"source\": \"builtin\",\r\n      \"dependencies\": {\r\n        \"com.unity.modules.audio\": \"1.0.0\",\r\n        \"com.unity.modules.ui\": \"1.0.0\",\r\n        \"com.unity.modules.unitywebrequest\": \"1.0.0\"\r\n      }\r\n    },\r\n    \"com.unity.modules.vr\": {\r\n      \"version\": \"1.0.0\",\r\n      \"depth\": 0,\r\n      \"source\": \"builtin\",\r\n      \"dependencies\": {\r\n        \"com.unity.modules.jsonserialize\": \"1.0.0\",\r\n        \"com.unity.modules.physics\": \"1.0.0\",\r\n        \"com.unity.modules.xr\": \"1.0.0\"\r\n      }\r\n    },\r\n    \"com.unity.modules.wind\": {\r\n      \"version\": \"1.0.0\",\r\n      \"depth\": 0,\r\n      \"source\": \"builtin\",\r\n      \"dependencies\": {}\r\n    },\r\n    \"com.unity.modules.xr\": {\r\n      \"version\": \"1.0.0\",\r\n      \"depth\": 0,\r\n      \"source\": \"builtin\",\r\n      \"dependencies\": {\r\n        \"com.unity.modules.physics\": \"1.0.0\",\r\n        \"com.unity.modules.jsonserialize\": \"1.0.0\",\r\n        \"com.unity.modules.subsystems\": \"1.0.0\"\r\n      }\r\n    }\r\n  }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/Packages/packages-lock.json b/Packages/packages-lock.json
+--- a/Packages/packages-lock.json	(revision 77aa8e1f39aada65a65992403c4fff904ed9e6c6)
++++ b/Packages/packages-lock.json	(date 1722853604379)
+@@ -1,7 +1,7 @@
+ {
+   "dependencies": {
+     "com.unity.burst": {
+-      "version": "1.8.7",
++      "version": "1.8.11",
+       "depth": 1,
+       "source": "registry",
+       "dependencies": {
+@@ -35,7 +35,7 @@
+       "url": "https://packages.unity.com"
+     },
+     "com.unity.ext.nunit": {
+-      "version": "1.0.6",
++      "version": "2.0.5",
+       "depth": 2,
+       "source": "registry",
+       "dependencies": {},
+@@ -46,17 +46,16 @@
+       "depth": 0,
+       "source": "builtin",
+       "dependencies": {
+-        "com.unity.ide.visualstudio": "2.0.18",
+-        "com.unity.ide.rider": "3.0.24",
+-        "com.unity.ide.vscode": "1.2.5",
++        "com.unity.ide.visualstudio": "2.0.22",
++        "com.unity.ide.rider": "3.0.27",
+         "com.unity.editorcoroutines": "1.0.0",
+         "com.unity.performance.profile-analyzer": "1.2.2",
+-        "com.unity.test-framework": "1.1.33",
+-        "com.unity.testtools.codecoverage": "1.2.4"
++        "com.unity.test-framework": "1.3.9",
++        "com.unity.testtools.codecoverage": "1.2.5"
+       }
+     },
+     "com.unity.ide.rider": {
+-      "version": "3.0.24",
++      "version": "3.0.27",
+       "depth": 1,
+       "source": "registry",
+       "dependencies": {
+@@ -71,13 +70,6 @@
+       "dependencies": {
+         "com.unity.test-framework": "1.1.9"
+       },
+-      "url": "https://packages.unity.com"
+-    },
+-    "com.unity.ide.vscode": {
+-      "version": "1.2.5",
+-      "depth": 1,
+-      "source": "registry",
+-      "dependencies": {},
+       "url": "https://packages.unity.com"
+     },
+     "com.unity.mathematics": {
+@@ -142,18 +134,18 @@
+       "url": "https://packages.unity.com"
+     },
+     "com.unity.test-framework": {
+-      "version": "1.1.33",
++      "version": "1.3.9",
+       "depth": 1,
+       "source": "registry",
+       "dependencies": {
+-        "com.unity.ext.nunit": "1.0.6",
++        "com.unity.ext.nunit": "2.0.3",
+         "com.unity.modules.imgui": "1.0.0",
+         "com.unity.modules.jsonserialize": "1.0.0"
+       },
+       "url": "https://packages.unity.com"
+     },
+     "com.unity.testtools.codecoverage": {
+-      "version": "1.2.4",
++      "version": "1.2.5",
+       "depth": 1,
+       "source": "registry",
+       "dependencies": {
+@@ -259,6 +251,12 @@
+         "com.unity.modules.animation": "1.0.0"
+       }
+     },
++    "com.unity.modules.hierarchycore": {
++      "version": "1.0.0",
++      "depth": 1,
++      "source": "builtin",
++      "dependencies": {}
++    },
+     "com.unity.modules.imageconversion": {
+       "version": "1.0.0",
+       "depth": 0,
+@@ -347,7 +345,8 @@
+       "dependencies": {
+         "com.unity.modules.ui": "1.0.0",
+         "com.unity.modules.imgui": "1.0.0",
+-        "com.unity.modules.jsonserialize": "1.0.0"
++        "com.unity.modules.jsonserialize": "1.0.0",
++        "com.unity.modules.hierarchycore": "1.0.0"
+       }
+     },
+     "com.unity.modules.umbra": {
+Index: Assets/Tweaks/Editor/BlockAttributeDrawer.cs
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/Assets/Tweaks/Editor/BlockAttributeDrawer.cs b/Assets/Tweaks/Editor/BlockAttributeDrawer.cs
+new file mode 100644
+--- /dev/null	(date 1722853558426)
++++ b/Assets/Tweaks/Editor/BlockAttributeDrawer.cs	(date 1722853558426)
+@@ -0,0 +1,64 @@
++using Alchemy.Editor;
++using Alchemy.Editor.Elements;
++using UnityEditor;
++using UnityEngine;
++using UnityEngine.UIElements;
++
++namespace Tweaks.Editor
++{
++    [CustomAttributeDrawer(typeof(BlockAttribute))]
++    public class BlockAttributeDrawer : AlchemyAttributeDrawer
++    {
++        public override void OnCreateElement()
++        {
++            switch (SerializedProperty.propertyType)
++            {
++                case SerializedPropertyType.ManagedReference:
++                {
++                    SerializeReferenceField serializeReferenceField = TargetElement.Q<SerializeReferenceField>();
++                    if (serializeReferenceField != null)
++                    {
++                        serializeReferenceField.AddToClassList("reference-field-block");
++                        return;
++                    }
++                    
++                    // Foldout foldout = TargetElement.Q<Foldout>();
++                    // if (foldout != null)
++                    // {
++                    //     foldout.AddToClassList("foldout-block");
++                    //     return;
++                    // }
++                }
++                break;
++
++                case SerializedPropertyType.Generic:
++                {
++                   if (SerializedProperty.isArray)
++                       break;
++                    
++                    Foldout foldout = TargetElement.Q<Foldout>();
++                    if (foldout != null)
++                    {
++                        foldout.AddToClassList("foldout-block");
++                        return;
++                    }
++                }
++                break;
++            }
++            
++            ListView listView = TargetElement.Q<ListView>();
++            if (listView != null)
++            {
++                listView.AddToClassList("list-view-header-block");
++            }
++            else
++            {
++                Foldout parentFoldout = TargetElement.GetFirstOfType<Foldout>();
++                if (parentFoldout != null)
++                {
++                    parentFoldout.AddToClassList("foldout-block");
++                }
++            }
++        }
++    }
++}
+\ No newline at end of file
+Index: Assets/Tweaks/Editor/BlockAttributeDrawer.cs.meta
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/Assets/Tweaks/Editor/BlockAttributeDrawer.cs.meta b/Assets/Tweaks/Editor/BlockAttributeDrawer.cs.meta
+new file mode 100644
+--- /dev/null	(date 1722853558430)
++++ b/Assets/Tweaks/Editor/BlockAttributeDrawer.cs.meta	(date 1722853558430)
+@@ -0,0 +1,3 @@
++fileFormatVersion: 2
++guid: 3abcd9e822784836aacfb373fad5709e
++timeCreated: 1722588688
+\ No newline at end of file
+Index: Assets/UnityDefaultRuntimeTheme.tss.meta
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>fileFormatVersion: 2\r\nguid: ddc13c887541d4a6c98c327d2079487a\r\nScriptedImporter:\r\n  internalIDToNameTable: []\r\n  externalObjects: {}\r\n  serializedVersion: 2\r\n  userData: \r\n  assetBundleName: \r\n  assetBundleVariant: \r\n  script: {fileID: 12388, guid: 0000000000000000e000000000000000, type: 0}\r\n  disableValidation: 0\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/Assets/UnityDefaultRuntimeTheme.tss.meta b/Assets/UnityDefaultRuntimeTheme.tss.meta
+--- a/Assets/UnityDefaultRuntimeTheme.tss.meta	(revision 77aa8e1f39aada65a65992403c4fff904ed9e6c6)
++++ b/Assets/UnityDefaultRuntimeTheme.tss.meta	(date 1722853558436)
+@@ -1,5 +1,5 @@
+ fileFormatVersion: 2
+-guid: ddc13c887541d4a6c98c327d2079487a
++guid: a883064806a0ac242a9972b407a60425
+ ScriptedImporter:
+   internalIDToNameTable: []
+   externalObjects: {}

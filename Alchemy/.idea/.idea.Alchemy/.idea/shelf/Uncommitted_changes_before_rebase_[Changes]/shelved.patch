@@ -1,0 +1,288 @@
+Index: Assets/Tweaks/TestSO.cs
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>using System.Collections.Generic;\r\nusing Alchemy.Inspector;\r\nusing Tweaks;\r\nusing UnityEngine;\r\n\r\n[System.Serializable]\r\n[CreateAssetMenu(fileName = \"TestSO\", menuName = \"TestSO\")]\r\npublic class TestSO : ScriptableObject\r\n{\r\n    [ListViewSettings()]\r\n    public List<TestInnerClass> testList = new List<TestInnerClass>();\r\n\r\n    [SerializeReference] public ITestInterface testInterface;\r\n    [SerializeReference] public ITestInterface testInterface2;\r\n    \r\n    [System.Serializable]\r\n    public class TestInnerClass\r\n    {\r\n        public int testInt;\r\n        \r\n        public string testString;\r\n        \r\n        public List<int> testIntList = new List<int>();\r\n    }\r\n}\r\n
+===================================================================
+diff --git a/Assets/Tweaks/TestSO.cs b/Assets/Tweaks/TestSO.cs
+--- a/Assets/Tweaks/TestSO.cs	
++++ b/Assets/Tweaks/TestSO.cs	
+@@ -1,18 +1,90 @@
+ using System.Collections.Generic;
+ using Alchemy.Inspector;
++using Alchemy.Serialization;
+ using Tweaks;
+ using UnityEngine;
+ 
+-[System.Serializable]
++[AlchemySerialize]
+ [CreateAssetMenu(fileName = "TestSO", menuName = "TestSO")]
+-public class TestSO : ScriptableObject
++public partial class TestSO : ScriptableObject
+ {
++    [Title("Title Test", subtitle:"A SubTitle Test")]
++    [Preview]
++    public Texture2D testTexture;
++    
++    [AlchemySerializeField] Dictionary<int, TestInnerClass> testDictionary = new Dictionary<int, TestInnerClass>();
++    
+     [ListViewSettings()]
+     public List<TestInnerClass> testList = new List<TestInnerClass>();
+ 
+     [SerializeReference] public ITestInterface testInterface;
+     [SerializeReference] public ITestInterface testInterface2;
+     
++    [Block]
++    public List<TestInnerClass> testList2 = new List<TestInnerClass>();
++    
++    [Block]
++    [SerializeReference] public ITestInterface testInterface3;
++
++    [BoxGroup("A")] public string boxGroup1;
++    [BoxGroup("A")] public string boxGroup2;
++    
++    [Group("B")] public string group1;
++    [Group("B")] public string group2;
++  
++    
++    [TabGroup("Tab1")] public string tabGroup1;
++    [TabGroup("Tab1")] public string tabGroup2;
++    
++    [TabGroup("Tab2")] public string tabGroup3;
++    [TabGroup("Tab2")] public string tabGroup4;
++    
++    [TabGroup("Tab3")] public string tabGroup5;
++    [TabGroup("Tab3")] public string tabGroup6;
++    
++    [Block]
++    [FoldoutGroup("Foldout1")] public string foldoutGroup1;
++    [FoldoutGroup("Foldout1")] public string foldoutGroup2;
++    
++    [HorizontalGroup("Horizontal1")] public string horizontalGroup1;
++    [HorizontalGroup("Horizontal1")] public string horizontalGroup2;
++    
++    [HorizontalGroup("Horizontal2")] public string horizontalGroup3;
++    [HorizontalGroup("Horizontal2")] public string horizontalGroup4;
++    [HorizontalGroup("Horizontal2")] public string horizontalGroup5;
++    
++    
++    [HorizontalGroup("Group2")]
++    [BoxGroup("Group2/Box1")]
++    public float foo;
++
++    [HorizontalGroup("Group2")]
++    [BoxGroup("Group2/Box1")]
++    public Vector3 bar;
++
++    [HorizontalGroup("Group2")]
++    [BoxGroup("Group2/Box1")]
++    public GameObject baz;
++
++    [HorizontalGroup("Group2")]
++    [BoxGroup("Group2/Box2")]
++    public float alpha;
++
++    [HorizontalGroup("Group2")]
++    [BoxGroup("Group2/Box2")]
++    public Vector3 beta;
++
++    [HorizontalGroup("Group2")]
++    [BoxGroup("Group2/Box2")]
++    public GameObject gamma;
++
++    [Block]
++    [InlineEditor]
++    public TestSO a;
++    
++    [Block]
++    public TestInnerClass testInnerClass;
++    
+     [System.Serializable]
+     public class TestInnerClass
+     {
+@@ -22,4 +94,9 @@
+         
+         public List<int> testIntList = new List<int>();
+     }
++
++    [Button]
++    private void DoThing(int testint)
++    {
++    }
+ }
+Index: Assets/Tweaks/TestSOEditor.cs
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>using Alchemy.Editor;\r\nusing Alchemy.Editor.Elements;\r\nusing UnityEditor;\r\nusing UnityEngine.UIElements;\r\n\r\n[CustomEditor(typeof(TestSO))]\r\npublic class TestSOEditor : AlchemyEditor\r\n{\r\n    public override VisualElement CreateInspectorGUI()\r\n    {\r\n        VisualElement visualElement = base.CreateInspectorGUI();\r\n\r\n        visualElement.styleSheets.Add(AssetDatabase.LoadAssetAtPath<StyleSheet>(\"Assets/Tweaks/Editor-List-Block-Style.uss\"));\r\n        visualElement.styleSheets.Add(AssetDatabase.LoadAssetAtPath<StyleSheet>(\"Assets/Tweaks/Editor-ReferenceField-Block-Style.uss\"));\r\n        \r\n        ListView listView = visualElement.Q<ListView>();\r\n        listView.AddToClassList(\"list-view-header-block\");\r\n        \r\n        SerializeReferenceField referenceField = visualElement.Q<SerializeReferenceField>();\r\n        referenceField.AddToClassList(\"reference-field-block\");\r\n        \r\n        return visualElement;\r\n    }\r\n}\r\n
+===================================================================
+diff --git a/Assets/Tweaks/TestSOEditor.cs b/Assets/Tweaks/TestSOEditor.cs
+--- a/Assets/Tweaks/TestSOEditor.cs	
++++ b/Assets/Tweaks/TestSOEditor.cs	
+@@ -12,6 +12,7 @@
+ 
+         visualElement.styleSheets.Add(AssetDatabase.LoadAssetAtPath<StyleSheet>("Assets/Tweaks/Editor-List-Block-Style.uss"));
+         visualElement.styleSheets.Add(AssetDatabase.LoadAssetAtPath<StyleSheet>("Assets/Tweaks/Editor-ReferenceField-Block-Style.uss"));
++        visualElement.styleSheets.Add(AssetDatabase.LoadAssetAtPath<StyleSheet>("Assets/Tweaks/Editor-Foldout-Block-Style.uss"));
+         
+         ListView listView = visualElement.Q<ListView>();
+         listView.AddToClassList("list-view-header-block");
+Index: Assets/Tweaks/Editor-ReferenceField-Block-Style.uss
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>SerializeReferenceField.reference-field-block {\r\n    margin-bottom: 2px;\r\n}\r\n\r\nSerializeReferenceField.reference-field-block > Foldout > Toggle {\r\n    padding-top: 3px;\r\n    padding-right: 3px;\r\n    padding-bottom: 3px;\r\n    padding-left: 3px;\r\n    border-top-left-radius: 4px;\r\n    border-top-right-radius: 4px;\r\n    border-top-width: 1px;\r\n    border-right-width: 1px;\r\n    border-bottom-width: 1px;\r\n    border-left-width: 1px;\r\n    border-left-color: rgb(26, 26, 26);\r\n    border-right-color: rgb(26, 26, 26);\r\n    border-top-color: rgb(26, 26, 26);\r\n    border-bottom-color: rgb(26, 26, 26);\r\n    margin-left: 0;\r\n    margin-right: 0;\r\n    margin-bottom: -1px;\r\n}\r\n\r\nSerializeReferenceField.reference-field-block > Foldout > #unity-content {\r\n    padding-top: 2px;\r\n    padding-right: 8px;\r\n    padding-bottom: 2px;\r\n    padding-left: 8px;\r\n    border-top-width: 1px;\r\n    border-right-width: 1px;\r\n    border-bottom-width: 1px;\r\n    border-left-width: 1px;\r\n    border-bottom-right-radius: 4px;\r\n    border-bottom-left-radius: 4px;\r\n    border-left-color: rgb(26, 26, 26);\r\n    border-right-color: rgb(26, 26, 26);\r\n    border-top-color: rgb(26, 26, 26);\r\n    border-bottom-color: rgb(26, 26, 26);\r\n    margin-left: 0;\r\n    margin-right: 0;\r\n    margin-top: 0;\r\n}\r\n\r\nSerializeReferenceField.reference-field-block > .unity-imgui-container {\r\n    right: 4px;\r\n    top: 4px;\r\n}\r\n
+===================================================================
+diff --git a/Assets/Tweaks/Editor-ReferenceField-Block-Style.uss b/Assets/Tweaks/Editor-ReferenceField-Block-Style.uss
+--- a/Assets/Tweaks/Editor-ReferenceField-Block-Style.uss	
++++ b/Assets/Tweaks/Editor-ReferenceField-Block-Style.uss	
+@@ -1,5 +1,5 @@
+ SerializeReferenceField.reference-field-block {
+-    margin-bottom: 2px;
++    margin-bottom: 4px;
+ }
+ 
+ SerializeReferenceField.reference-field-block > Foldout > Toggle {
+@@ -24,7 +24,7 @@
+ 
+ SerializeReferenceField.reference-field-block > Foldout > #unity-content {
+     padding-top: 2px;
+-    padding-right: 8px;
++    padding-right: 5px;
+     padding-bottom: 2px;
+     padding-left: 8px;
+     border-top-width: 1px;
+@@ -40,9 +40,16 @@
+     margin-left: 0;
+     margin-right: 0;
+     margin-top: 0;
++    background-color: rgb(70, 70, 70);
+ }
+ 
+ SerializeReferenceField.reference-field-block > .unity-imgui-container {
+     right: 4px;
+     top: 4px;
+ }
++
++SerializeReferenceField > .unity-imgui-container {
++    position: absolute;
++    right: 2px;
++    top: 0;
++}
+Index: Assets/Tweaks/Testing.uxml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><ui:UXML xmlns:ui=\"UnityEngine.UIElements\" xmlns:uie=\"UnityEditor.UIElements\" editor-extension-mode=\"True\">\r\n    <Style src=\"project://database/Assets/Tweaks/Editor-List-Block-Style.uss?fileID=7433441132597879392&amp;guid=205e004721deb3c4c874463805d1d81e&amp;type=3#Editor-List-Block-Style\" />\r\n    <Style src=\"project://database/Assets/Tweaks/Editor-ReferenceField-Block-Style.uss?fileID=7433441132597879392&amp;guid=8ead94330b1e42244b90074c50333d49&amp;type=3#Editor-ReferenceField-Block-Style\" />\r\n    <ui:ListView show-add-remove-footer=\"true\" show-border=\"true\" show-foldout-header=\"true\" header-title=\"Test Header\" class=\"list-view-header-block\" />\r\n</ui:UXML>\r\n
+===================================================================
+diff --git a/Assets/Tweaks/Testing.uxml b/Assets/Tweaks/Testing.uxml
+--- a/Assets/Tweaks/Testing.uxml	
++++ b/Assets/Tweaks/Testing.uxml	
+@@ -1,5 +1,21 @@
+ <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="True">
+     <Style src="project://database/Assets/Tweaks/Editor-List-Block-Style.uss?fileID=7433441132597879392&amp;guid=205e004721deb3c4c874463805d1d81e&amp;type=3#Editor-List-Block-Style" />
+     <Style src="project://database/Assets/Tweaks/Editor-ReferenceField-Block-Style.uss?fileID=7433441132597879392&amp;guid=8ead94330b1e42244b90074c50333d49&amp;type=3#Editor-ReferenceField-Block-Style" />
++    <Style src="project://database/Assets/Tweaks/Editor-Foldout-Block-Style.uss?fileID=7433441132597879392&amp;guid=f85a981a16fd07349bb31e7e3188fbce&amp;type=3#Editor-Foldout-Block-Style" />
++    <Style src="project://database/Assets/Alchemy/Editor/Resources/Elements/PreviewDrawer-Styles.uss?fileID=7433441132597879392&amp;guid=69c6b4cc64394494dbba0a8c3ecd4948&amp;type=3#PreviewDrawer-Styles" />
++    <Style src="project://database/Assets/Alchemy/Editor/Resources/Elements/TitleDrawer-Attribute-Styles.uss?fileID=7433441132597879392&amp;guid=a2eb60c0e86a6794b9424ba71fd90dbb&amp;type=3#TitleDrawer-Attribute-Styles" />
++    <Style src="project://database/Assets/Alchemy/Editor/Resources/Elements/GroupDrawer-Styles.uss?fileID=7433441132597879392&amp;guid=9d6b242beb0c9604a8391767034d571f&amp;type=3#GroupDrawer-Styles" />
++    <Style src="project://database/Assets/Alchemy/Editor/Resources/Elements/BoxGroupDrawer-Styles.uss?fileID=7433441132597879392&amp;guid=117704c2b443e014095f10d11b9f210f&amp;type=3#BoxGroupDrawer-Styles" />
++    <Style src="project://database/Assets/Alchemy/Editor/Resources/Elements/TabGroupDrawer-Styles.uss?fileID=7433441132597879392&amp;guid=13a48c1b8ba62f942b4cbb2aae034159&amp;type=3#TabGroupDrawer-Styles" />
++    <Style src="project://database/Assets/Alchemy/Editor/Resources/Elements/FoldoutGroupDrawer-Styles.uss?fileID=7433441132597879392&amp;guid=8b17ba45088bebc4fa28f6dafc3ebd06&amp;type=3#FoldoutGroupDrawer-Styles" />
++    <Style src="project://database/Assets/Alchemy/Editor/Resources/Elements/HorizontalGroupDrawer-Styles.uss?fileID=7433441132597879392&amp;guid=2b28d225d83221f4a8b023a8c7b91e67&amp;type=3#HorizontalGroupDrawer-Styles" />
++    <Style src="project://database/Assets/Alchemy/Editor/Resources/Elements/InlineEditor-Styles.uss?fileID=7433441132597879392&amp;guid=aaa4afc631a4af34fb865228740cc721&amp;type=3#InlineEditor-Styles" />
++    <Style src="project://database/Assets/Alchemy/Editor/Resources/Elements/MethodButton-Styles.uss?fileID=7433441132597879392&amp;guid=f1c473f1a5a2d5d4eb405d92395d3fe1&amp;type=3#MethodButton-Styles" />
++    <Style src="project://database/Assets/Alchemy/Editor/Resources/Elements/SerializeReferenceField-Styles.uss?fileID=7433441132597879392&amp;guid=91582b4ac42c4aa428921592952fda23&amp;type=3#SerializeReferenceField-Styles" />
++    <Style src="project://database/Assets/Alchemy/Editor/Resources/Elements/HashMapFieldBase-Styles.uss?fileID=7433441132597879392&amp;guid=9b12372e7fba421498abd9feb71f070a&amp;type=3#HashMapFieldBase-Styles" />
++    <Style src="project://database/Assets/Alchemy/Editor/Resources/Elements/DictionaryField-Styles.uss?fileID=7433441132597879392&amp;guid=43783c92a5e44cd448d8779a4ef2ad75&amp;type=3#DictionaryField-Styles" />
++    <Style src="project://database/Assets/Alchemy/Editor/Resources/Elements/HashSetField-Styles.uss?fileID=7433441132597879392&amp;guid=bd286bd8c2d9b0441b75501a60eac224&amp;type=3#HashSetField-Styles" />
++    <Style src="project://database/Assets/Alchemy/Editor/Resources/Elements/GenericField-Styles.uss?fileID=7433441132597879392&amp;guid=4ac1260ce4a7de944913341fc812795b&amp;type=3#GenericField-Styles" />
++    <Style src="project://database/Assets/Alchemy/Editor/Resources/Elements/ClassField-Styles.uss?fileID=7433441132597879392&amp;guid=46dce550910e1d240b5dfb9ee6393add&amp;type=3#ClassField-Styles" />
+     <ui:ListView show-add-remove-footer="true" show-border="true" show-foldout-header="true" header-title="Test Header" class="list-view-header-block" />
+ </ui:UXML>
+Index: Assets/Tweaks/TestSO.asset
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>%YAML 1.1\r\n%TAG !u! tag:unity3d.com,2011:\r\n--- !u!114 &11400000\r\nMonoBehaviour:\r\n  m_ObjectHideFlags: 0\r\n  m_CorrespondingSourceObject: {fileID: 0}\r\n  m_PrefabInstance: {fileID: 0}\r\n  m_PrefabAsset: {fileID: 0}\r\n  m_GameObject: {fileID: 0}\r\n  m_Enabled: 1\r\n  m_EditorHideFlags: 0\r\n  m_Script: {fileID: 11500000, guid: 9e4eed46c56adb9418c131e63823ae57, type: 3}\r\n  m_Name: TestSO\r\n  m_EditorClassIdentifier: \r\n  testList:\r\n  - testInt: 0\r\n    testString: dfdfgsdfgfdgfdg\r\n    testIntList: \r\n  - testInt: 25\r\n    testString: sdsdgdfgdfg\r\n    testIntList: \r\n  - testInt: 94\r\n    testString: ' vb bvdgfhfgdhdf'\r\n    testIntList: 00000000000000000000000000000000\r\n  testInterface:\r\n    rid: 5607092618470359116\r\n  testInterface2:\r\n    rid: 5607092619054416477\r\n  references:\r\n    version: 2\r\n    RefIds:\r\n    - rid: 5607092618470359116\r\n      type: {class: Concrete2, ns: Tweaks, asm: Assembly-CSharp}\r\n      data:\r\n        concrete2String: sdasdasd\r\n        concreteBool: asda\r\n    - rid: 5607092619054416477\r\n      type: {class: Concrete1, ns: Tweaks, asm: Assembly-CSharp}\r\n      data:\r\n        concrete1String: \r\n
+===================================================================
+diff --git a/Assets/Tweaks/TestSO.asset b/Assets/Tweaks/TestSO.asset
+--- a/Assets/Tweaks/TestSO.asset	
++++ b/Assets/Tweaks/TestSO.asset	
+@@ -12,6 +12,7 @@
+   m_Script: {fileID: 11500000, guid: 9e4eed46c56adb9418c131e63823ae57, type: 3}
+   m_Name: TestSO
+   m_EditorClassIdentifier: 
++  testTexture: {fileID: 10300, guid: 0000000000000000f000000000000000, type: 0}
+   testList:
+   - testInt: 0
+     testString: dfdfgsdfgfdgfdg
+@@ -25,7 +26,55 @@
+   testInterface:
+     rid: 5607092618470359116
+   testInterface2:
+-    rid: 5607092619054416477
++    rid: 5607092640495173744
++  testList2:
++  - testInt: 0
++    testString: 
++    testIntList: 
++  - testInt: 0
++    testString: 
++    testIntList: 
++  - testInt: 0
++    testString: 
++    testIntList: 
++  - testInt: 0
++    testString: 
++    testIntList: 
++  testInterface3:
++    rid: 5607092663712743570
++  boxGroup1: 
++  boxGroup2: 
++  group1: 
++  group2: 
++  tabGroup1: 
++  tabGroup2: 
++  tabGroup3: 
++  tabGroup4: 
++  tabGroup5: 
++  tabGroup6: 
++  foldoutGroup1: 
++  foldoutGroup2: 
++  horizontalGroup1: 
++  horizontalGroup2: 
++  horizontalGroup3: 
++  horizontalGroup4: 
++  horizontalGroup5: 
++  foo: 0.29
++  bar: {x: 0, y: -0.11, z: 0}
++  baz: {fileID: 0}
++  alpha: 0
++  beta: {x: 0, y: 0, z: 0}
++  gamma: {fileID: 0}
++  a: {fileID: 11400000, guid: ab4ac1eaa2db28d4687b67b5413952c3, type: 2}
++  testInnerClass:
++    testInt: 0
++    testString: 
++    testIntList: 
++  __alchemySerializationData_TestSO:
++    testDictionary:
++      isCreated: 1
++      data: '[]'
++    unityObjectReferences: []
+   references:
+     version: 2
+     RefIds:
+@@ -34,7 +83,13 @@
+       data:
+         concrete2String: sdasdasd
+         concreteBool: asda
+-    - rid: 5607092619054416477
+-      type: {class: Concrete1, ns: Tweaks, asm: Assembly-CSharp}
++    - rid: 5607092640495173744
++      type: {class: Concrete2, ns: Tweaks, asm: Assembly-CSharp}
+       data:
+-        concrete1String: 
++        concrete2String: 
++        concreteBool: 
++    - rid: 5607092663712743570
++      type: {class: Concrete2, ns: Tweaks, asm: Assembly-CSharp}
++      data:
++        concrete2String: 
++        concreteBool: 
