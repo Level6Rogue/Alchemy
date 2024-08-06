@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e4eed46c56adb9418c131e63823ae57, type: 3}
   m_Name: TestSO
   m_EditorClassIdentifier: 
+  testTexture: {fileID: 10300, guid: 0000000000000000f000000000000000, type: 0}
   testList:
   - testInt: 0
     testString: dfdfgsdfgfdgfdg
@@ -25,7 +26,55 @@ MonoBehaviour:
   testInterface:
     rid: 5607092618470359116
   testInterface2:
-    rid: 5607092619054416477
+    rid: 5607092640495173744
+  testList2:
+  - testInt: 0
+    testString: 
+    testIntList: 
+  - testInt: 0
+    testString: 
+    testIntList: 
+  - testInt: 0
+    testString: 
+    testIntList: 
+  - testInt: 0
+    testString: 
+    testIntList: 
+  testInterface3:
+    rid: 5607092663712743570
+  boxGroup1: 
+  boxGroup2: 
+  group1: 
+  group2: 
+  tabGroup1: 
+  tabGroup2: 
+  tabGroup3: 
+  tabGroup4: 
+  tabGroup5: 
+  tabGroup6: 
+  foldoutGroup1: 
+  foldoutGroup2: 
+  horizontalGroup1: 
+  horizontalGroup2: 
+  horizontalGroup3: 
+  horizontalGroup4: 
+  horizontalGroup5: 
+  foo: 0.29
+  bar: {x: 0, y: -0.11, z: 0}
+  baz: {fileID: 0}
+  alpha: 0
+  beta: {x: 0, y: 0, z: 0}
+  gamma: {fileID: 0}
+  a: {fileID: 11400000, guid: ab4ac1eaa2db28d4687b67b5413952c3, type: 2}
+  testInnerClass:
+    testInt: 0
+    testString: 
+    testIntList: 
+  __alchemySerializationData_TestSO:
+    testDictionary:
+      isCreated: 1
+      data: '[]'
+    unityObjectReferences: []
   references:
     version: 2
     RefIds:
@@ -34,7 +83,13 @@ MonoBehaviour:
       data:
         concrete2String: sdasdasd
         concreteBool: asda
-    - rid: 5607092619054416477
-      type: {class: Concrete1, ns: Tweaks, asm: Assembly-CSharp}
+    - rid: 5607092640495173744
+      type: {class: Concrete2, ns: Tweaks, asm: Assembly-CSharp}
       data:
-        concrete1String: 
+        concrete2String: 
+        concreteBool: 
+    - rid: 5607092663712743570
+      type: {class: Concrete2, ns: Tweaks, asm: Assembly-CSharp}
+      data:
+        concrete2String: 
+        concreteBool: 

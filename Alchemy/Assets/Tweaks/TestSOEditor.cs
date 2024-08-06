@@ -12,6 +12,7 @@ public class TestSOEditor : AlchemyEditor
 
         visualElement.styleSheets.Add(AssetDatabase.LoadAssetAtPath<StyleSheet>("Assets/Tweaks/Editor-List-Block-Style.uss"));
         visualElement.styleSheets.Add(AssetDatabase.LoadAssetAtPath<StyleSheet>("Assets/Tweaks/Editor-ReferenceField-Block-Style.uss"));
+        visualElement.styleSheets.Add(AssetDatabase.LoadAssetAtPath<StyleSheet>("Assets/Tweaks/Editor-Foldout-Block-Style.uss"));
         
         ListView listView = visualElement.Q<ListView>();
         listView.AddToClassList("list-view-header-block");

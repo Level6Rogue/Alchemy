@@ -1,5 +1,5 @@
 SerializeReferenceField.reference-field-block {
-    margin-bottom: 2px;
+    margin-bottom: 4px;
 }
 
 SerializeReferenceField.reference-field-block > Foldout > Toggle {
@@ -24,7 +24,7 @@ SerializeReferenceField.reference-field-block > Foldout > Toggle {
 
 SerializeReferenceField.reference-field-block > Foldout > #unity-content {
     padding-top: 2px;
-    padding-right: 8px;
+    padding-right: 5px;
     padding-bottom: 2px;
     padding-left: 8px;
     border-top-width: 1px;
@@ -40,9 +40,16 @@ SerializeReferenceField.reference-field-block > Foldout > #unity-content {
     margin-left: 0;
     margin-right: 0;
     margin-top: 0;
+    background-color: rgb(70, 70, 70);
 }
 
 SerializeReferenceField.reference-field-block > .unity-imgui-container {
     right: 4px;
     top: 4px;
+}
+
+SerializeReferenceField > .unity-imgui-container {
+    position: absolute;
+    right: 2px;
+    top: 0;
 }

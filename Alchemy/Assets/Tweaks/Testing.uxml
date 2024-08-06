@@ -1,5 +1,21 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="True">
     <Style src="project://database/Assets/Tweaks/Editor-List-Block-Style.uss?fileID=7433441132597879392&amp;guid=205e004721deb3c4c874463805d1d81e&amp;type=3#Editor-List-Block-Style" />
     <Style src="project://database/Assets/Tweaks/Editor-ReferenceField-Block-Style.uss?fileID=7433441132597879392&amp;guid=8ead94330b1e42244b90074c50333d49&amp;type=3#Editor-ReferenceField-Block-Style" />
+    <Style src="project://database/Assets/Tweaks/Editor-Foldout-Block-Style.uss?fileID=7433441132597879392&amp;guid=f85a981a16fd07349bb31e7e3188fbce&amp;type=3#Editor-Foldout-Block-Style" />
+    <Style src="project://database/Assets/Alchemy/Editor/Resources/Elements/PreviewDrawer-Styles.uss?fileID=7433441132597879392&amp;guid=69c6b4cc64394494dbba0a8c3ecd4948&amp;type=3#PreviewDrawer-Styles" />
+    <Style src="project://database/Assets/Alchemy/Editor/Resources/Elements/TitleDrawer-Attribute-Styles.uss?fileID=7433441132597879392&amp;guid=a2eb60c0e86a6794b9424ba71fd90dbb&amp;type=3#TitleDrawer-Attribute-Styles" />
+    <Style src="project://database/Assets/Alchemy/Editor/Resources/Elements/GroupDrawer-Styles.uss?fileID=7433441132597879392&amp;guid=9d6b242beb0c9604a8391767034d571f&amp;type=3#GroupDrawer-Styles" />
+    <Style src="project://database/Assets/Alchemy/Editor/Resources/Elements/BoxGroupDrawer-Styles.uss?fileID=7433441132597879392&amp;guid=117704c2b443e014095f10d11b9f210f&amp;type=3#BoxGroupDrawer-Styles" />
+    <Style src="project://database/Assets/Alchemy/Editor/Resources/Elements/TabGroupDrawer-Styles.uss?fileID=7433441132597879392&amp;guid=13a48c1b8ba62f942b4cbb2aae034159&amp;type=3#TabGroupDrawer-Styles" />
+    <Style src="project://database/Assets/Alchemy/Editor/Resources/Elements/FoldoutGroupDrawer-Styles.uss?fileID=7433441132597879392&amp;guid=8b17ba45088bebc4fa28f6dafc3ebd06&amp;type=3#FoldoutGroupDrawer-Styles" />
+    <Style src="project://database/Assets/Alchemy/Editor/Resources/Elements/HorizontalGroupDrawer-Styles.uss?fileID=7433441132597879392&amp;guid=2b28d225d83221f4a8b023a8c7b91e67&amp;type=3#HorizontalGroupDrawer-Styles" />
+    <Style src="project://database/Assets/Alchemy/Editor/Resources/Elements/InlineEditor-Styles.uss?fileID=7433441132597879392&amp;guid=aaa4afc631a4af34fb865228740cc721&amp;type=3#InlineEditor-Styles" />
+    <Style src="project://database/Assets/Alchemy/Editor/Resources/Elements/MethodButton-Styles.uss?fileID=7433441132597879392&amp;guid=f1c473f1a5a2d5d4eb405d92395d3fe1&amp;type=3#MethodButton-Styles" />
+    <Style src="project://database/Assets/Alchemy/Editor/Resources/Elements/SerializeReferenceField-Styles.uss?fileID=7433441132597879392&amp;guid=91582b4ac42c4aa428921592952fda23&amp;type=3#SerializeReferenceField-Styles" />
+    <Style src="project://database/Assets/Alchemy/Editor/Resources/Elements/HashMapFieldBase-Styles.uss?fileID=7433441132597879392&amp;guid=9b12372e7fba421498abd9feb71f070a&amp;type=3#HashMapFieldBase-Styles" />
+    <Style src="project://database/Assets/Alchemy/Editor/Resources/Elements/DictionaryField-Styles.uss?fileID=7433441132597879392&amp;guid=43783c92a5e44cd448d8779a4ef2ad75&amp;type=3#DictionaryField-Styles" />
+    <Style src="project://database/Assets/Alchemy/Editor/Resources/Elements/HashSetField-Styles.uss?fileID=7433441132597879392&amp;guid=bd286bd8c2d9b0441b75501a60eac224&amp;type=3#HashSetField-Styles" />
+    <Style src="project://database/Assets/Alchemy/Editor/Resources/Elements/GenericField-Styles.uss?fileID=7433441132597879392&amp;guid=4ac1260ce4a7de944913341fc812795b&amp;type=3#GenericField-Styles" />
+    <Style src="project://database/Assets/Alchemy/Editor/Resources/Elements/ClassField-Styles.uss?fileID=7433441132597879392&amp;guid=46dce550910e1d240b5dfb9ee6393add&amp;type=3#ClassField-Styles" />
     <ui:ListView show-add-remove-footer="true" show-border="true" show-foldout-header="true" header-title="Test Header" class="list-view-header-block" />
 </ui:UXML>
