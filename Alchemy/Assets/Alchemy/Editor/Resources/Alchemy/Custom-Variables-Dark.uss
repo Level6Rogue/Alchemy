@@ -1,0 +1,30 @@
+:root {
+    --group-corner-radius: 4px;
+    --group-colors-border: rgb(26, 26, 26);
+    --group-colors-content-background--default: rgba(122, 122, 122, 0.15);
+    --group-colors-content-background--boxed: rgb(70, 70, 70);
+    --group-colors-header-background: rgb(55, 55, 55);
+    --group-colors-highlight-active-title: var(--unity-colors-button-background-pressed);
+    --group-colors-highlight-active-background: rgb(88, 104, 122);
+    --group-colors-highlight-red-title: rgb(58, 34, 34);
+    --group-colors-highlight-red-background: rgb(94, 40, 40);
+    --group-colors-highlight-green-title: rgb(43, 75, 43);
+    --group-colors-highlight-green-background: rgb(70, 102, 70);
+    --group-colors-highlight-blue-title: rgb(34, 38, 57);
+    --group-colors-highlight-blue-background: rgb(43, 49, 74);
+    --group-colors-highlight-cyan-title: rgb(3, 57, 63);
+    --group-colors-highlight-cyan-background: rgb(34, 51, 53);
+    --group-colors-highlight-yellow-title: rgb(86, 75, 13);
+    --group-colors-highlight-yellow-background: rgb(121, 107, 17);
+    --group-colors-highlight-orange-title: rgb(140, 80, 20);
+    --group-colors-highlight-orange-background: rgb(130, 91, 56);
+    --group-colors-highlight-purple-title: rgb(48, 8, 63);
+    --group-colors-highlight-purple-background: rgb(59, 7, 80);
+    --group-colors-highlight-pink-title: rgb(61, 0, 40);
+    --group-colors-highlight-pink-background: rgb(105, 1, 66);
+    --group-colors-highlight-brown-title: rgb(43, 41, 39);
+    --group-colors-highlight-brown-background: rgb(80, 75, 70);
+    --group-colors-highlight-gray-title: rgb(45, 45, 45);
+    --group-colors-highlight-gray-background: rgb(128, 128, 128);
+}
+

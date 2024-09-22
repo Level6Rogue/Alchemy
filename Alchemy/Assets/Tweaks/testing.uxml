@@ -1,0 +1,55 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="True">
+    <Style src="project://database/Assets/Alchemy/Editor/Resources/Alchemy/Custom-Variables-Dark.uss?fileID=7433441132597879392&amp;guid=bac6187c89cea5c4cabca212eca6b766&amp;type=3#Custom-Variables-Dark" />
+    <Style src="project://database/Assets/Alchemy/Editor/Resources/Alchemy/Alchemy-Tab-Group-Styles.uss?fileID=7433441132597879392&amp;guid=c3deb88544eed94428e1aee150b3289a&amp;type=3#Alchemy-Tab-Group-Styles" />
+    <Style src="project://database/Assets/Alchemy/Editor/Resources/Alchemy/Alchemy-Group-Styles.uss?fileID=7433441132597879392&amp;guid=5919caaa96a18d94a814af0bb3d6bae2&amp;type=3#Alchemy-Group-Styles" />
+    <Style src="project://database/Assets/Alchemy/Editor/Resources/Alchemy/Inline-Button-Styles.uss?fileID=7433441132597879392&amp;guid=3ecd91099ba110f4fa6b2ffd5b14d226&amp;type=3#Inline-Button-Styles" />
+    <Style src="project://database/Assets/Alchemy/Editor/Resources/Alchemy/Alchemy-Foldout-Styles.uss?fileID=7433441132597879392&amp;guid=1d86facdd426a4d498e9b1107ea3ad73&amp;type=3#Alchemy-Foldout-Styles" />
+    <Style src="project://database/Assets/Alchemy/Editor/Resources/Alchemy/Alchemy-Title-Styles.uss?fileID=7433441132597879392&amp;guid=3f02d77a79b918c408bb68853f32dcab&amp;type=3#Alchemy-Title-Styles" />
+    <Style src="project://database/Assets/Alchemy/Editor/Resources/Alchemy/Alchemy-Toggle-Group-Styles.uss?fileID=7433441132597879392&amp;guid=09aeeb627712c0441a7025c977277878&amp;type=3#Alchemy-Toggle-Group-Styles" />
+    <Style src="project://database/Assets/Alchemy/Editor/Resources/Alchemy/Alchemy-Toggle-Foldout-Group-Styles.uss?fileID=7433441132597879392&amp;guid=0eb3b90208fe6754686b462ccfb002fc&amp;type=3#Alchemy-Toggle-Foldout-Group-Styles" />
+    <Style src="project://database/Assets/Alchemy/Editor/Resources/Alchemy/Highlight-Styles.uss?fileID=7433441132597879392&amp;guid=06418f905cc045547bfd5b98aa31a473&amp;type=3#Highlight-Styles" />
+    <Style src="project://database/Assets/Alchemy/Editor/Resources/Elements/HorizontalGroupDrawer-Styles.uss?fileID=7433441132597879392&amp;guid=13dce85ab883484389bd6a58b04b2baa&amp;type=3#HorizontalGroupDrawer-Styles" />
+    <Style src="project://database/Assets/Alchemy/Editor/Resources/Elements/SerializeReferenceField-Styles.uss?fileID=7433441132597879392&amp;guid=4d9e061de31926540bd3357d253bbc7f&amp;type=3#SerializeReferenceField-Styles" />
+    <Style src="project://database/Assets/Alchemy/Editor/Resources/Elements/InlineEditorObjectField-Styles.uss?fileID=7433441132597879392&amp;guid=cdf5e4bb45125a14ab23a4c244daa36b&amp;type=3#InlineEditorObjectField-Styles" />
+    <Style src="project://database/Assets/Alchemy/Editor/Resources/Elements/AlchemyListView-Styles.uss?fileID=7433441132597879392&amp;guid=cfb0b59b85812394a8d59965a2a5c13e&amp;type=3#AlchemyListView-Styles" />
+    <ui:VisualElement style="flex-grow: 1; background-color: rgba(119, 62, 159, 0); margin-top: 8px; margin-right: 8px; margin-bottom: 8px; margin-left: 8px;">
+        <Alchemy.Editor.Elements.AlchemyTitle />
+        <ui:FloatField label="Float Field" value="42.2" />
+        <ui:FloatField label="Float Field" value="42.2" />
+        <ui:FloatField label="Float Field" value="42.2" />
+        <Alchemy.Editor.Elements.AlchemyTabView name="FancyTabView" tab-group-style="Boxed" expand-tabs="true" reorderable="false" highlight-color="Red" background-style="Default" tint-color="Active" tabs-style="Tint">
+            <ui:Tab label="Tab 1">
+                <ui:FloatField label="Float Field" value="42.2" />
+                <ui:Vector2Field label="Vec2 Field" />
+            </ui:Tab>
+            <ui:Tab closeable="false" label="Tab 2">
+                <ui:LongField label="Long Field" value="42" />
+                <ui:Vector2Field label="Vec2 Field" />
+            </ui:Tab>
+            <ui:Tab label="Tab 3" focusable="false" />
+            <ui:Tab label="Tab 3" focusable="false" />
+        </Alchemy.Editor.Elements.AlchemyTabView>
+        <Alchemy.Editor.Elements.AlchemyGroup group-style="Boxed" show-body="true" show-title-separator="false" move-inline-elements="true" show-header="true" title="Header" header-style="Tint" body-style="Default" tint-color="Green">
+            <Alchemy.Editor.Elements.AlchemyInlineButton text="Do Thing Paramaterless" name="a-button" />
+            <ui:IntegerField label="Integer Field" value="42" />
+            <ui:IntegerField label="Integer Field" value="42" />
+        </Alchemy.Editor.Elements.AlchemyGroup>
+        <Alchemy.Editor.Elements.AlchemyFoldout text="Toggle" box-group-style="Default" title-style="Tint" tint-color="Green" move-inline-elements="true" header-style="Tint" name="AlchemyFoldout" body-style="Tint">
+            <Alchemy.Editor.Elements.AlchemyInlineButton text="G" name="g-button" />
+            <ui:FloatField label="Float Field" value="42.2" />
+        </Alchemy.Editor.Elements.AlchemyFoldout>
+        <Alchemy.Editor.Elements.AlchemyToggleGroup box-group-style="Boxed" group-style="Boxed" title="Toggle Group" disable-children="false" disable-if="false" header-style="Tint" body-style="Default" tint-color="Red" move-inline-elements="true">
+            <ui:LongField label="Long Field" value="42" />
+            <ui:FloatField label="Float Field" value="42.2" />
+            <Alchemy.Editor.Elements.AlchemyInlineButton text="G" name="g-button" />
+        </Alchemy.Editor.Elements.AlchemyToggleGroup>
+        <Alchemy.Editor.Elements.AlchemyToggleFoldoutGroup box-group-style="Boxed" text="Toggle Foldout" header-style="Tint" tint-color="Red" move-inline-elements="true">
+            <ui:DoubleField label="Double Field" value="42.2" />
+            <Alchemy.Editor.Elements.AlchemyInlineButton text="G" name="g-button" />
+        </Alchemy.Editor.Elements.AlchemyToggleFoldoutGroup>
+        <Alchemy.Editor.Elements.InlineEditorObjectField text="Ablabla" box-group-style="Default" />
+        <Alchemy.Editor.Elements.SerializeReferenceField box-group-style="Default" text="Yadada" />
+        <Alchemy.Editor.Elements.AlchemyListView header-title="Test" show-border="true" show-foldout-header="true" show-add-remove-footer="true" box-group-style="Boxed" header-style="Tint" tint-color="Pink" />
+    </ui:VisualElement>
+    <Alchemy.Editor.Elements.AlchemyInlineButton name="AlchemyInlineButton" text="Test" />
+</ui:UXML>

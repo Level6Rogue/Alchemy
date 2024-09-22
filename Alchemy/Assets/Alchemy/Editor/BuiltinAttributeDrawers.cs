@@ -1,3 +1,4 @@
+using System;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.UIElements;
@@ -322,34 +323,14 @@ namespace Alchemy.Editor.Drawers
             var att = (TitleAttribute)Attribute;
             var parent = TargetElement.parent;
 
-            var title = new Label(att.TitleText)
+            AlchemyTitle title = new()
             {
-                style = {
-                    unityFontStyleAndWeight = FontStyle.Bold,
-                    paddingLeft = 3f,
-                    marginTop = 4f,
-                    marginBottom = -2f
-                }
+                Title = att.TitleText,
+                SubTitle = att.SubtitleText,
+                ShowTitleSeparator = true
             };
-            parent.Insert(parent.IndexOf(TargetElement), title);
-
-            if (att.SubtitleText != null)
-            {
-                var subtitle = new Label(att.SubtitleText)
-                {
-                    style = {
-                        fontSize = 10f,
-                        paddingLeft = 4.5f,
-                        marginTop = 1.5f,
-                        color = GUIHelper.SubtitleColor,
-                        unityTextAlign = TextAnchor.MiddleLeft
-                    }
-                };
-                parent.Insert(parent.IndexOf(TargetElement), subtitle);
-            }
-
-            var line = GUIHelper.CreateLine(GUIHelper.LineColor, EditorGUIUtility.standardVerticalSpacing * 3f);
-            parent.Insert(parent.IndexOf(TargetElement), line);
+            
+            parent.Insert(parent.IndexOf(TargetElement),title);
         }
     }
 
@@ -419,6 +400,42 @@ namespace Alchemy.Editor.Drawers
                     }
                 }
             });
+        }
+    }
+    
+    [CustomAttributeDrawer(typeof(PropertyFieldStyleAttribute))]
+    public sealed class PropertyFieldStyleDrawer : AlchemyAttributeDrawer
+    {
+        public override void OnCreateElement()
+        {
+            if (TargetElement is not AlchemyPropertyField alchemyPropertyField) 
+                return;
+            
+            PropertyFieldStyleAttribute attribute = (PropertyFieldStyleAttribute)Attribute;
+            
+
+            if (alchemyPropertyField[0] is SerializeReferenceField serializeReferenceField)
+            {
+                SerializeReferenceDefaultStyles defaults = AlchemySettings.GetOrCreateSettings().DefaultSerializeReferenceStyle;
+                
+                if (attribute.Style.GetGroupStyle(out GroupStyle groupStyle)) serializeReferenceField.Style = groupStyle;
+                if (attribute.Style.GetHeaderStyle(out HeaderStyle headerStyle)) serializeReferenceField.HeaderStyle = headerStyle;
+                if (attribute.Style.GetBodyStyle(out BodyStyle bodyStyle)) serializeReferenceField.BodyStyle = bodyStyle;
+                if (attribute.Color != 0) serializeReferenceField.TintColor = attribute.Color;
+            }
+            else
+            {
+                AlchemyFoldout foldout = alchemyPropertyField.Q<AlchemyFoldout>();
+                if (foldout != null)
+                {
+                    ClassDefaultStyles defaults = AlchemySettings.GetOrCreateSettings().DefaultClassStyle;;
+                    
+                    if (attribute.Style.GetGroupStyle(out GroupStyle groupStyle)) foldout.Style = groupStyle;
+                    if (attribute.Style.GetHeaderStyle(out HeaderStyle headerStyle)) foldout.HeaderStyle = headerStyle;
+                    if (attribute.Style.GetBodyStyle(out BodyStyle bodyStyle)) foldout.BodyStyle = bodyStyle;
+                    if (attribute.Color != 0) foldout.TintColor = attribute.Color;
+                }
+            }
         }
     }
 }

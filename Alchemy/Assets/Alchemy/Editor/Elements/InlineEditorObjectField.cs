@@ -1,104 +1,109 @@
 using System;
-using UnityEngine.Assertions;
-using UnityEngine.UIElements;
+using Alchemy.Inspector;
 using UnityEditor;
 using UnityEditor.UIElements;
-using Alchemy.Inspector;
+using UnityEngine;
+using UnityEngine.Assertions;
+using UnityEngine.UIElements;
+using Object = UnityEngine.Object;
 
 namespace Alchemy.Editor.Elements
 {
     /// <summary>
     /// Visual Element that draws the ObjectField of the InlineEditor attribute
     /// </summary>
-    public sealed class InlineEditorObjectField : BindableElement
+    [UxmlElement]
+    public sealed partial class InlineEditorObjectField : AlchemyFoldout
     {
-        public InlineEditorObjectField(SerializedProperty property, Type type)
-        {
-            Assert.IsTrue(property.propertyType == SerializedPropertyType.ObjectReference);
-
-            style.minHeight = EditorGUIUtility.singleLineHeight + EditorGUIUtility.standardVerticalSpacing;
-
-            foldout = new Foldout()
-            {
-                text = ObjectNames.NicifyVariableName(property.displayName)
-            };
-            var toggle = foldout.Q<Toggle>();
-            var clickable = InternalAPIHelper.GetClickable(toggle);
-            InternalAPIHelper.SetAcceptClicksIfDisabled(clickable, true);
-
-            foldout.BindProperty(property);
-
-            field = new ObjectField()
-            {
-                label = ObjectNames.NicifyVariableName(property.displayName),
-                objectType = type,
-                allowSceneObjects = !property.GetFieldInfo().HasCustomAttribute<AssetsOnlyAttribute>(),
-                value = property.objectReferenceValue
-            };
-            field.style.position = Position.Absolute;
-            field.style.width = Length.Percent(100f);
-            GUIHelper.ScheduleAdjustLabelWidth(field);
-
-            OnPropertyChanged(property);
-            field.RegisterValueChangedCallback(x =>
-            {
-                property.objectReferenceValue = x.newValue;
-                property.serializedObject.ApplyModifiedProperties();
-                OnPropertyChanged(property);
-            });
-
-            Add(foldout);
-            Add(field);
-        }
-
-        readonly Foldout foldout;
-        readonly ObjectField field;
+        private readonly StyleSheet _styleSheet = Resources.Load<StyleSheet>("Elements/InlineEditorObjectField-Styles");
+        
+        private readonly ObjectField field;
+        
+        private SerializedProperty _property;
         bool isNull;
-
         public bool IsObjectNull => isNull;
 
         public string Label
         {
-            get
-            {
-                if (isNull) return field.Q<Label>().text;
-                else return foldout.text;
-            }
-            set
-            {
-                if (isNull) field.Q<Label>().text = value;
-                else foldout.text = value;
-            }
+            get => text;
+            set => text = value;
+        }
+        
+        public InlineEditorObjectField()
+        {
+            styleSheets.Add(_styleSheet);
+            
+            field = new ObjectField();
+            field.AddToClassList("alchemy-inline-editor-object-field__object-field");
+            field.RegisterValueChangedCallback(OnFieldValueChanged);
+            field.RegisterCallback<GeometryChangedEvent>(_ => field.RemoveFromClassList("unity-base-field__inspector-field"));
+            GUIHelper.ScheduleAdjustLabelWidth(field);
+            
+            GroupBase.Header.Add(field);
+        }
+
+        public InlineEditorObjectField(SerializedProperty property, Type type) : this() => BindField(property, type);
+
+        public void BindField(SerializedProperty property, Type type)
+        {
+            _property = property;
+            
+            Assert.IsTrue(property.propertyType == SerializedPropertyType.ObjectReference);
+
+            string fieldName = ObjectNames.NicifyVariableName(property.displayName);
+            
+            text = fieldName;
+            this.BindProperty(property);
+            
+            field.label = fieldName;
+            field.objectType = type;
+            field.allowSceneObjects = !property.GetFieldInfo().HasCustomAttribute<AssetsOnlyAttribute>();
+            field.value = property.objectReferenceValue;
+            
+            Label fieldLabel = field.Q<Label>();
+            fieldLabel.AddToClassList("alchemy-inline-editor-object-field__object-field__label--hidden");
+            
+            OnPropertyChanged(property);
+        }
+        
+        private void OnFieldValueChanged(ChangeEvent<Object> evt)
+        {
+            if (_property == null) return;
+            
+            _property.objectReferenceValue = evt.newValue;
+            _property.serializedObject.ApplyModifiedProperties();
+            OnPropertyChanged(_property);
         }
 
         void OnPropertyChanged(SerializedProperty property)
         {
             isNull = property.objectReferenceValue == null;
 
-            field.Q<Label>().text = isNull ? ObjectNames.NicifyVariableName(property.displayName) : string.Empty;
+            Label fieldLabel = field.Q<Label>();
+            fieldLabel.text = isNull ? ObjectNames.NicifyVariableName(property.displayName) : string.Empty;
+            
             field.pickingMode = PickingMode.Ignore;
-
+            
             var objectField = field.Q<ObjectField>();
             objectField.pickingMode = PickingMode.Ignore;
 
             var label = objectField.Q<Label>();
             label.pickingMode = PickingMode.Ignore;
 
+            HideFoldout(isNull);
+            
             Build(property);
         }
 
         void Build(SerializedProperty property)
         {
-            foldout.Clear();
-            var toggle = foldout.Q<Toggle>();
+            Clear();
 
             isNull = property.objectReferenceValue == null;
-            toggle.style.display = isNull ? DisplayStyle.None : DisplayStyle.Flex;
             if (!isNull)
             {
-                foldout.Add(new VisualElement() { style = { height = EditorGUIUtility.standardVerticalSpacing } });
                 var so = new SerializedObject(property.objectReferenceValue);
-                InspectorHelper.BuildElements(so, foldout, so.targetObject, name => so.FindProperty(name));
+                InspectorHelper.BuildElements(so, this, so.targetObject, name => so.FindProperty(name));
                 this.Bind(so);
             }
             else

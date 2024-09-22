@@ -1,0 +1,41 @@
+.alchemy-foldout__toggle {
+    margin-top: -1px;
+    margin-right: 0;
+    margin-bottom: 0;
+    margin-left: 0;
+    padding-top: 1px;
+    padding-right: 1px;
+    padding-bottom: 1px;
+    padding-left: 3px;
+    flex-grow: 1;
+    -unity-font-style: bold;
+}
+
+.alchemy-foldout__toggle--boxed {
+    margin-top: 0;
+    margin-bottom: 0;
+    height: 20px;
+}
+
+.alchemy-foldout__content {
+    padding-top: 2px;
+    padding-bottom: 2px;
+}
+
+.alchemy-foldout__content--boxed {
+    margin-left: 2px;
+}
+
+.alchemy-foldout__toggle--hidden {
+    opacity: 1;
+}
+
+.alchemy-foldout__toggle__checkmark--hidden {
+    display: none;
+    visibility: hidden;
+}
+
+.alchemy-foldout__toggle__label--hidden {
+    -unity-font-style: bold;
+    margin-left: 2px;
+}

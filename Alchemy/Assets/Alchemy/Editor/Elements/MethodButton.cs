@@ -1,4 +1,5 @@
 using System.Reflection;
+using Alchemy.Inspector;
 using UnityEditor;
 using UnityEngine.UIElements;
 
@@ -8,66 +9,65 @@ namespace Alchemy.Editor.Elements
     {
         const string ButtonLabelText = "Invoke";
 
-        public MethodButton(object target, MethodInfo methodInfo)
+        private readonly AlchemyFoldout _foldout;
+        private readonly Button button;
+        
+        public MethodButton(object target, MethodInfo methodInfo, bool inline = false)
         {
             var parameters = methodInfo.GetParameters();
 
             // Create parameterless button
             if (parameters.Length == 0)
             {
-                button = new Button(() => methodInfo.Invoke(target, null))
+                if (inline)
                 {
-                    text = methodInfo.Name
-                };
-                Add(button);
-                return;
+                    Button button = new AlchemyInlineButton(() => methodInfo.Invoke(target, null))
+                    {
+                        text = methodInfo.Name  
+                    };
+                    Add(button);
+                }
+                else
+                {
+                    button = new Button(() => methodInfo.Invoke(target, null))
+                    {
+                        text = methodInfo.Name
+                    };
+                    Add(button);
+                }
+                
             }
-
-            var parameterObjects = new object[parameters.Length];
-
-            var box = new HelpBox();
-            Add(box);
-
-            foldout = new Foldout()
+            else
             {
-                text = methodInfo.Name,
-                value = false,
-                style = {
-                    flexGrow = 1f
+                _foldout = new()
+                {
+                    text = methodInfo.Name,
+                    Style = GroupStyle.Boxed,
+                };
+                
+                Add(_foldout);
+
+                object[] parameterObjects = new object[parameters.Length];
+                
+                
+                AlchemyInlineButton invokeButton = new(() => methodInfo.Invoke(target, parameterObjects))
+                {
+                    text = ButtonLabelText,
+                };
+                
+                _foldout.GroupBase.Header.Add(invokeButton); 
+                
+                for (int i = 0; i < parameters.Length; i++)
+                {
+                    var index = i;
+                    var parameter = parameters[index];
+                    parameterObjects[index] = TypeHelper.CreateDefaultInstance(parameter.ParameterType);
+                    var element = new GenericField(parameterObjects[index], parameter.ParameterType, ObjectNames.NicifyVariableName(parameter.Name));
+                    element.OnValueChanged += x => parameterObjects[index] = x;
+                    element.style.paddingRight = 4f;
+                    _foldout.Add(element);
                 }
-            };
-            InternalAPIHelper.SetAcceptClicksIfDisabled(
-                InternalAPIHelper.GetClickable(foldout.Q<Toggle>()), true
-            );
-
-            button = new Button(() => methodInfo.Invoke(target, parameterObjects))
-            {
-                text = ButtonLabelText,
-                style = {
-                    position = Position.Absolute,
-                    right = 1f,
-                    top = 1.5f,
-                    width = 100f
-                }
-            };
-
-            box.Add(new VisualElement() { style = { width = 12f } });
-            box.Add(foldout);
-            box.Add(button);
-
-            for (int i = 0; i < parameters.Length; i++)
-            {
-                var index = i;
-                var parameter = parameters[index];
-                parameterObjects[index] = TypeHelper.CreateDefaultInstance(parameter.ParameterType);
-                var element = new GenericField(parameterObjects[index], parameter.ParameterType, ObjectNames.NicifyVariableName(parameter.Name));
-                element.OnValueChanged += x => parameterObjects[index] = x;
-                element.style.paddingRight = 4f;
-                foldout.Add(element);
             }
         }
-
-        readonly Foldout foldout;
-        readonly Button button;
     }
 }

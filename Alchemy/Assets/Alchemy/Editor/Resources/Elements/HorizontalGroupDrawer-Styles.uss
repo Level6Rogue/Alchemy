@@ -1,0 +1,11 @@
+.horizontal-group__main-element {
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.horizontal-group__main-element > * {
+    flex-grow: 1;
+    flex-shrink: 0;
+}

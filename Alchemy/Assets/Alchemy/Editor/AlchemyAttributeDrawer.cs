@@ -53,7 +53,7 @@ namespace Alchemy.Editor
         /// </summary>
         public abstract void OnCreateElement();
 
-        internal static void ExecutePropertyDrawers(SerializedObject serializedObject, SerializedProperty property, object target, MemberInfo memberInfo, VisualElement memberElement)
+        public static void ExecutePropertyDrawers(SerializedObject serializedObject, SerializedProperty property, object target, MemberInfo memberInfo, VisualElement memberElement)
         {
             var attributes = memberInfo.GetCustomAttributes();
             var processorTypes = TypeCache.GetTypesWithAttribute(typeof(CustomAttributeDrawerAttribute));

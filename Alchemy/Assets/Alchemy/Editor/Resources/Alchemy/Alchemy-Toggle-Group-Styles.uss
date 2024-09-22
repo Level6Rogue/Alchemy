@@ -1,0 +1,18 @@
+.alchemy-toggle-group__toggle {
+    flex-grow: 0;
+    margin-top: 2px;
+    margin-bottom: 1px;
+    -unity-font-style: bold;
+}
+
+.alchemy-toggle-group__toggle > VisualElement > Label {
+    margin-left: 5px;
+    -unity-font-style: bold;
+    margin-top: -1px;
+}
+
+.alchemy-toggle-group__toggle--boxed {
+    margin-top: 1px;
+    margin-bottom: 3px;
+    margin-left: 4px;
+}

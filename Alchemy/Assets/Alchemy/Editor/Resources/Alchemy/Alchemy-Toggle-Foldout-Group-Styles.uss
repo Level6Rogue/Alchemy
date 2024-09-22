@@ -1,0 +1,12 @@
+.alchemy-toggle-foldout-group__toggle {
+    flex-grow: 0;
+    margin-bottom: 2px;
+    margin-right: 2px;
+    margin-top: 2px;
+}
+
+.alchemy-toggle-foldout-group__toggle--boxed {
+    margin-top: -1px;
+    margin-bottom: 0;
+    margin-left: 4px;
+}

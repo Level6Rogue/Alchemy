@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="40bbe111-1f55-41ca-9785-aa2f36eb0ed1" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/.idea.Alchemy/.idea/indexLayout.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Alchemy/Editor/Elements/Groups.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Alchemy/Editor/Elements/Groups/AlchemyFoldout.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Alchemy/Editor/Elements/Groups/AlchemyFoldout.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Alchemy/Editor/Elements/Groups/AlchemyGroup.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Alchemy/Editor/Elements/Groups/AlchemyGroup.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Alchemy/Editor/Elements/Groups/AlchemyGroupBase.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Alchemy/Editor/Elements/Groups/AlchemyGroupBase.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Alchemy/Editor/Elements/Groups/AlchemyHorizontalGroup.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Alchemy/Editor/Elements/Groups/AlchemyHorizontalGroup.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Alchemy/Editor/Elements/Groups/AlchemyTabView.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Alchemy/Editor/Elements/Groups/AlchemyTabView.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Alchemy/Editor/Elements/Groups/AlchemyTitle.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Alchemy/Editor/Elements/Groups/AlchemyTitle.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Alchemy/Editor/Elements/Groups/AlchemyToggleFoldoutGroup.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Alchemy/Editor/Elements/Groups/AlchemyToggleFoldoutGroup.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Alchemy/Editor/Elements/Groups/AlchemyToggleGroup.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Alchemy/Editor/Elements/Groups/AlchemyToggleGroup.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Alchemy/Editor/Elements/Groups/Inline.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Alchemy/Editor/Elements/Groups/Inline/AlchemyInlineButton.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Alchemy/Editor/Elements/Groups/Inline/AlchemyInlineButton.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Alchemy/Editor/Elements/Groups/Inline/AlchemyInlineContainer.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Alchemy/Editor/Elements/Groups/Inline/AlchemyInlineContainer.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Alchemy/Editor/Elements/Groups/Inline/IInlineElement.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Alchemy/Editor/Elements/Groups/Inline/IInlineElement.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Alchemy/Editor/Elements/Groups/Inline/IInlineHeaderControl.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Alchemy/Editor/Elements/Groups/Inline/IInlineHeaderControl.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Alchemy/Editor/Elements/Groups/Inline/InlineController.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Alchemy/Editor/Elements/Groups/Inline/InlineController.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Alchemy/Editor/Elements/Groups/Inline/InliningExtensions.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Alchemy/Editor/Elements/Groups/Inline/InliningExtensions.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Alchemy/Editor/Resources.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Alchemy/Editor/Resources/Alchemy.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Alchemy/Editor/Resources/Elements.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Alchemy/Editor/Resources/Elements/HorizontalGroupDrawer-Styles.uss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Alchemy/Editor/Resources/Elements/HorizontalGroupDrawer-Styles.uss.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Alchemy/Runtime/Inspector/Styles.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Alchemy/Runtime/Inspector/Styles.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Alchemy/Tests/SinglePropertyIterator.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Alchemy/Tests/SinglePropertyIterator/Editor/CustomEditorTestEditor.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Alchemy/Tests/SinglePropertyIterator/Editor/CustomEditorTestEditor.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Alchemy/Editor/AlchemyAttributeDrawer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Alchemy/Editor/AlchemyAttributeDrawer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Alchemy/Editor/AlchemyEditorUtility.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Alchemy/Editor/AlchemyEditorUtility.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Alchemy/Editor/AlchemySettings.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Alchemy/Editor/AlchemySettings.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Alchemy/Editor/BuiltinGroupDrawers.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Alchemy/Editor/BuiltinGroupDrawers.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Alchemy/Editor/Elements/MethodButton.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Alchemy/Editor/Elements/MethodButton.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Alchemy/Editor/Elements/ReflectionField.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Alchemy/Editor/Elements/ReflectionField.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Alchemy/Editor/Internal/InspectorHelper.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Alchemy/Editor/Internal/InspectorHelper.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Alchemy/Editor/Internal/ReflectionHelper.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Alchemy/Editor/Internal/ReflectionHelper.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Alchemy/Runtime/Inspector/GroupAttributes.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Alchemy/Runtime/Inspector/GroupAttributes.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Alchemy/Runtime/Inspector/InspectorAttributes.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Alchemy/Runtime/Inspector/InspectorAttributes.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UnityDefaultRuntimeTheme.tss.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UnityDefaultRuntimeTheme.tss.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Packages/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/AlchemySettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/AlchemySettings.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectVersion.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectVersion.txt" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$/.." value="84fb71550bf28d2b5250adafac948e802ddd4b51" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/2d8ca4eb2ddd452d9e2715b1b5605cbb955200/a3/4e702d60/SettingsProvider.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/51ee0c51c90047b488b10b1b78b365d846ae00/d5/7965bc41/Environment.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/6a558074f3e5493a87ae967e8113a3fe1dee00/1d/9685cde6/Foldout.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/6a558074f3e5493a87ae967e8113a3fe1dee00/20/d3ba1e52/FloatField.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/6a558074f3e5493a87ae967e8113a3fe1dee00/23/bb35b0e9/TextInputBaseField`1.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/6a558074f3e5493a87ae967e8113a3fe1dee00/29/c3e8c44a/UQueryBuilder`1.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/6a558074f3e5493a87ae967e8113a3fe1dee00/36/a65eb618/BindableElement.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/6a558074f3e5493a87ae967e8113a3fe1dee00/4c/851e0a3c/RadioButtonGroup.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/6a558074f3e5493a87ae967e8113a3fe1dee00/52/d4fcf88f/BaseField`1.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/6a558074f3e5493a87ae967e8113a3fe1dee00/62/91313c13/TextValueField`1.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/6a558074f3e5493a87ae967e8113a3fe1dee00/a0/25360072/PseudoStates.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/6a558074f3e5493a87ae967e8113a3fe1dee00/a2/c856dd06/TabView.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/6a558074f3e5493a87ae967e8113a3fe1dee00/b5/7e904ab0/GroupBox.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/6a558074f3e5493a87ae967e8113a3fe1dee00/b8/e2424cd7/VisualElement.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/6a558074f3e5493a87ae967e8113a3fe1dee00/c3/199c824e/UQueryExtensions.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/6a558074f3e5493a87ae967e8113a3fe1dee00/e7/29e98681/DefaultGroupManager.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/6a558074f3e5493a87ae967e8113a3fe1dee00/e7/b9b67fa2/Toggle.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/6a558074f3e5493a87ae967e8113a3fe1dee00/ff/b1d32dae/TextField.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/fe359b5209f448518d57c6007fa35f7421e00/ba/4e7fb607/CreatePropertyAttribute.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Alchemy/Tests/SinglePropertyIterator/CustomEditorTest.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.collab-proxy@2.2.0/Editor/PlasticSCM/UI/UnityStyles.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.collections@2.1.4/Unity.Collections/RewindableAllocator.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.mathematics@1.2.6/Unity.Mathematics/Noise/classicnoise3D.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.sysroot@2.0.7/Editor/Unity.SysrootPackage.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@2.0.0/Editor/TMP/PropertyDrawers/GlyphPairAdjustmentRecordPropertyDrawer.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@2.0.0/Editor/TMP/PropertyDrawers/TMP_SpriteCharacterPropertyDrawer.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@2.0.0/Editor/TMP/PropertyDrawers/TMP_SpriteGlyphPropertyDrawer.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@2.0.0/Editor/TMP/TMP_BaseEditorPanel.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@2.0.0/Editor/TMP/TMP_EditorPanelUI.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@2.0.0/Editor/TMP/TMP_EditorResourceManager.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@2.0.0/Editor/TMP/TMP_FontAssetEditor.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@2.0.0/Editor/TMP/TMP_FontAsset_CreationMenu.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@2.0.0/Editor/TMP/TMP_MarkupTagUpdateUtility.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@2.0.0/Editor/TMP/TMP_PackageUtilities.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@2.0.0/Editor/TMP/TMP_ResourcesLoader.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@2.0.0/Editor/TMP/TMP_SpriteAssetEditor.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@2.0.0/Editor/TMP/TMP_SpriteAssetImporter.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@2.0.0/Editor/TMP/TMP_SpriteAssetMenu.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@2.0.0/Editor/TMP/TMP_SubMeshUI_Editor.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@2.0.0/Editor/TMP/TMPro_ContextMenus.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@2.0.0/Editor/TMP/TMPro_EditorShaderUtilities.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@2.0.0/Editor/TMP/TMPro_FontAssetCreatorWindow.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@2.0.0/Editor/UGUI/UI/CanvasScalerEditor.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@2.0.0/Editor/UGUI/UI/RawImageEditor.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@2.0.0/Runtime/TMP/TMP_MaterialManager.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@2.0.0/Runtime/TMP/TMP_MeshInfo.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@2.0.0/Runtime/TMP/TMP_ObjectPool.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@2.0.0/Runtime/TMP/TMP_ScrollbarEventHandler.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@2.0.0/Runtime/TMP/TMP_SelectionCaret.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@2.0.0/Runtime/TMP/TMP_Settings.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@2.0.0/Runtime/TMP/TMP_ShaderUtilities.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@2.0.0/Runtime/TMP/TMP_SpriteAsset.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@2.0.0/Runtime/TMP/TMP_SubMeshUI.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@2.0.0/Runtime/TMP/TMP_Text.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@2.0.0/Runtime/TMP/TMP_TextInfo.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@2.0.0/Runtime/TMP/TMP_TextParsingUtilities.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@2.0.0/Runtime/TMP/TMP_UpdateRegistery.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@2.0.0/Runtime/TMP/TextContainer.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@2.0.0/Runtime/TMP/TextMeshPro.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@2.0.0/Runtime/UGUI/UI/Core/FontUpdateTracker.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@2.0.0/Runtime/UGUI/UI/Core/Layout/ILayoutElement.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@2.0.0/Tests/Editor/UGUI/Canvas/AssertionFailureOnOutputVertexCount.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@2.0.0/Tests/Runtime/UGUI/Canvas/CanvasScalerWithChildTextObjectDoesNotCrash.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@2.0.0/Tests/Runtime/UGUI/EventSystem/GraphicRaycasterWorldSpaceCanvasTests.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@2.0.0/Tests/Runtime/UGUI/MaskClipping/RectMask2DClipping.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@2.0.0/Tests/Runtime/UGUI/Slider/SliderTests.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.visualscripting@1.8.0/Editor/VisualScripting.Flow/Units/UnitWidget.cs" root0="SKIP_HIGHLIGHTING" />
+  </component>
+  <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="false" />
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 0
+}</component>
+  <component name="ProjectId" id="2kjtJ6DuN7xgREKeySutIkecjB3" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Attach to Unity Editor.Attach to Unity Editor.executor&quot;: &quot;Debug&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;Single-Property-Iterator&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  },
+  &quot;keyToStringList&quot;: {
+    &quot;rider.external.source.directories&quot;: [
+      &quot;C:\\Users\\Zen\\AppData\\Roaming\\JetBrains\\Rider2023.3\\resharper-host\\DecompilerCache&quot;,
+      &quot;C:\\Users\\Zen\\AppData\\Roaming\\JetBrains\\Rider2023.3\\resharper-host\\SourcesCache&quot;,
+      &quot;C:\\Users\\Zen\\AppData\\Local\\Symbols\\src&quot;
+    ]
+  }
+}</component>
+  <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
+    <configuration name="Start Unity" type="RunUnityExe" factoryName="Unity Executable">
+      <option name="EXE_PATH" value="P:\Program Files\Unity Editors\2023.2.5f1\Editor\Unity.exe" />
+      <option name="PROGRAM_PARAMETERS" value="-projectPath P:\_Unity\alchemy-l6r\Alchemy -debugCodeOptimization" />
+      <option name="WORKING_DIRECTORY" value="P:\_Unity\alchemy-l6r\Alchemy" />
+      <option name="PASS_PARENT_ENVS" value="1" />
+      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Unit Tests (batch mode)" type="RunUnityExe" factoryName="Unity Executable">
+      <option name="EXE_PATH" value="P:\Program Files\Unity Editors\2023.2.5f1\Editor\Unity.exe" />
+      <option name="PROGRAM_PARAMETERS" value="-runTests -batchmode -projectPath P:\_Unity\alchemy-l6r\Alchemy -testResults Logs/results.xml -testPlatform EditMode -debugCodeOptimization" />
+      <option name="WORKING_DIRECTORY" value="P:\_Unity\alchemy-l6r\Alchemy" />
+      <option name="PASS_PARENT_ENVS" value="1" />
+      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Attach to Unity Editor &amp; Play" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="UNITY_ATTACH_AND_PLAY" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+      <option name="allowRunningInParallel" value="false" />
+      <option name="listenPortForConnections" value="false" />
+      <option name="pid" />
+      <option name="projectPathOnTarget" />
+      <option name="selectedOptions">
+        <list />
+      </option>
+      <method v="2" />
+    </configuration>
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+      <option name="allowRunningInParallel" value="false" />
+      <option name="listenPortForConnections" value="false" />
+      <option name="pid" />
+      <option name="projectPathOnTarget" />
+      <option name="selectedOptions">
+        <list />
+      </option>
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="40bbe111-1f55-41ca-9785-aa2f36eb0ed1" name="Changes" comment="" />
+      <created>1724317675772</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1724317675772</updated>
+      <workItem from="1724317680480" duration="12621000" />
+      <workItem from="1724401375062" duration="96317000" />
+      <workItem from="1725690564535" duration="62401000" />
+      <workItem from="1726283080974" duration="18812000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="UnityCheckinConfiguration" checkUnsavedScenes="false" />
+  <component name="UnityProjectConfiguration" hasMinimizedUI="true" />
+  <component name="UnityUnitTestConfiguration" currentTestLauncher="Both" />
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+    <MESSAGE value="Added empty/populated classes for InlineEditorObjectField and SerializeReferenceField. To be used for additional styling." />
+    <MESSAGE value="Fix for foldouts overflowing outside of Boxes. See https://github.com/AnnulusGames/Alchemy/issues/30" />
+    <option name="LAST_COMMIT_MESSAGE" value="" />
+  </component>
+  <component name="XDebuggerManager">
+    <pin-to-top-manager>
+      <pinned-members>
+        <PinnedItemInfo parentTag="Type#Alchemy.Editor.InspectorHelper+GroupNode" memberName="Members" />
+      </pinned-members>
+    </pin-to-top-manager>
+  </component>
+</project>

@@ -1,0 +1,58 @@
+.alchemy-list-view {
+    margin-right: 2px;
+    margin-bottom: 2px;
+}
+
+.alchemy-list-view__foldout-header--boxed {
+    border-top-width: 1px;
+    border-right-width: 1px;
+    border-bottom-width: 1px;
+    border-left-width: 1px;
+    border-left-color: var(--group-colors-border);
+    border-right-color: var(--group-colors-border);
+    border-top-color: var(--group-colors-border);
+    border-bottom-color: var(--group-colors-border);
+    border-top-left-radius: var(--group-corner-radius);
+    border-top-right-radius: var(--group-corner-radius);
+    padding-top: 3px;
+    padding-right: 2px;
+    padding-bottom: 3px;
+    padding-left: 2px;
+    margin-right: 0;
+    margin-bottom: 4px;
+    border-bottom-right-radius: var(--group-corner-radius);
+    border-bottom-left-radius: var(--group-corner-radius);
+}
+
+.alchemy-list-view__foldout-header--boxed:checked {
+    margin-bottom: -1px;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+.alchemy-list-view__scroll-view--boxed {
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}
+
+.alchemy-list-view__size-field--boxed {
+    top: 3px;
+    right: 2px;
+    margin-right: 2px;
+}
+
+.unity-collection-view__item--alternative-background {
+    background-color: rgba(11, 11, 11, 0.2);
+}
+
+.unity-collection-view__item--alternative-background:hover {
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+.unity-collection-view:focus:enabled .unity-collection-view__item--selected {
+    background-color: var(--unity-colors-highlight-background);
+}
+
+.unity-collection-view:focus:enabled .unity-collection-view__item--selected.unity-collection-view__item--alternative-background {
+    background-color: rgb(55, 116, 168);
+}

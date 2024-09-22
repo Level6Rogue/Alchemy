@@ -1,0 +1,14 @@
+.alchemy-inline-editor-object-field__object-field {
+    margin-right: 2px;
+    margin-top: 2px;
+    margin-bottom: 2px;
+    flex-grow: 1;
+    margin-left: 4px;
+    -unity-font-style: bold;
+    max-width: 80%;
+}
+
+.alchemy-inline-editor-object-field__object-field__label--hidden {
+    visibility: hidden;
+    display: none;
+}

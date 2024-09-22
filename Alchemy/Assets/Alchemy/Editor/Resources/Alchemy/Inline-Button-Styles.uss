@@ -1,0 +1,50 @@
+.alchemy-inline-button {
+    margin-top: 1px;
+    margin-right: 1px;
+    margin-bottom: 1px;
+    margin-left: 0;
+}
+
+.inline-element--boxed {
+    border-top-width: 1px;
+    border-right-width: 1px;
+    border-bottom-width: 1px;
+    border-left-width: 1px;
+    height: 100%;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+    margin-top: 0;
+    margin-right: 0;
+    margin-bottom: 0;
+    margin-left: 1px;
+    border-left-color: rgba(0, 0, 0, 0);
+    border-right-color: rgba(0, 0, 0, 0);
+    border-top-color: rgba(0, 0, 0, 0);
+    border-bottom-color: rgba(0, 0, 0, 0);
+    background-color: rgba(159, 159, 159, 0.09);
+}
+
+.alchemy-inline-button.inline-element--boxed:hover {
+    background-color: rgba(159, 159, 159, 0.3);
+}
+
+.alchemy-inline-button.inline-element--boxed:active {
+    border-left-color: var(--unity-colors-button-border_accent-focus);
+    border-right-color: var(--unity-colors-button-border_accent-focus);
+    border-top-color: var(--unity-colors-button-border_accent-focus);
+    border-bottom-color: var(--unity-colors-button-border_accent-focus);
+    background-color: var(--unity-colors-button-background-pressed);
+}
+
+.alchemy-inline-button.inline-element--boxed:focus {
+    border-left-color: var(--unity-colors-button-border_accent-focus);
+    border-right-color: var(--unity-colors-button-border_accent-focus);
+    border-top-color: var(--unity-colors-button-border_accent-focus);
+    border-bottom-color: var(--unity-colors-button-border_accent-focus);
+}
+
+.inline-element--boxed.inline-element--last {
+    border-top-right-radius: 3px;
+}

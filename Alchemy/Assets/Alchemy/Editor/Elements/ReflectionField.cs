@@ -22,8 +22,10 @@ namespace Alchemy.Editor.Elements
             {
                 if (methodInfo.HasCustomAttribute<ButtonAttribute>())
                 {
-                    var button = new MethodButton(target, methodInfo);
-                    Add(button);
+                    ButtonAttribute buttonAttribute = methodInfo.GetCustomAttribute<ButtonAttribute>();
+
+                    VisualElement buttonElement = InspectorHelper.GetMethodButtonElement(target, methodInfo, buttonAttribute);
+                    Add(buttonElement);
                 }
                 return;
             }

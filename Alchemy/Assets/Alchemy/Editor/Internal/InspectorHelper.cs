@@ -135,7 +135,9 @@ namespace Alchemy.Editor
                     }
 
                     if (element == null) continue;
-                    element.style.width = Length.Percent(100f);
+                    
+                    if (element is not AlchemyInlineButton)
+                        element.style.width = Length.Percent(100f);
 
                     var e = node.Drawer?.GetGroupElement(
                         member.GetCustomAttributes<PropertyGroupAttribute>()
@@ -202,7 +204,8 @@ namespace Alchemy.Editor
                 case MethodInfo methodInfo:
                     if (methodInfo.HasCustomAttribute<ButtonAttribute>())
                     {
-                        return new MethodButton(target, methodInfo);
+                        ButtonAttribute buttonAttribute = methodInfo.GetCustomAttribute<ButtonAttribute>();
+                        return GetMethodButtonElement(target, methodInfo, buttonAttribute);
                     }
                     break;
                 case FieldInfo:
@@ -290,6 +293,56 @@ namespace Alchemy.Editor
             return null;
         }
 
+        public static VisualElement GetMethodButtonElement(object target, MethodInfo methodInfo, ButtonAttribute buttonAttribute)
+        {
+            string buttonText = buttonAttribute?.ButtonText ?? methodInfo.Name;
+
+            var parameters = methodInfo.GetParameters();
+            
+            if (parameters.Length == 0)
+            {
+                return new Button(() => methodInfo.Invoke(target, null))
+                {
+                    text = buttonText
+                };
+            }
+            else
+            {
+                const string ButtonLabelText = "Invoke";
+                
+                AlchemyFoldout foldout = new()
+                {
+                    text = methodInfo.Name,
+                    value = false,
+                    Style = GroupStyle.Boxed,
+                };
+                
+                object[] parameterObjects = new object[parameters.Length];
+                
+                AlchemyInlineButton invokeButton = new(() => methodInfo.Invoke(target, parameterObjects))
+                {
+                    text = ButtonLabelText,
+                    style = { minWidth = 200 }
+                };
+
+                foldout.Add(invokeButton);
+                
+                for (int i = 0; i < parameters.Length; i++)
+                {
+                    var index = i;
+                    var parameter = parameters[index];
+                    parameterObjects[index] = TypeHelper.CreateDefaultInstance(parameter.ParameterType);
+                    var element = new GenericField(parameterObjects[index], parameter.ParameterType, ObjectNames.NicifyVariableName(parameter.Name));
+                    element.OnValueChanged += x => parameterObjects[index] = x;
+                    element.style.paddingRight = 4f;
+                    foldout.Add(element);
+                }
+
+                return foldout;
+            }            
+        }
+
+
         internal static IOrderedEnumerable<MemberInfo> OrderByAttributeThenByMemberType(this IEnumerable<MemberInfo> members)
         {
             return members
@@ -304,6 +357,27 @@ namespace Alchemy.Editor
                     if (x is MethodInfo) return 1;
                     return 0;
                 });
+        }
+
+        public static VisualElement CreateClassFoldout(string labelText, SerializedProperty property,
+            PropertyFieldStyleAttribute propertyFieldStyleAttribute)
+        {
+            ClassDefaultStyles defaults = AlchemySettings.GetOrCreateSettings().DefaultClassStyle;
+
+            var foldout = new AlchemyFoldout
+            {
+                text = labelText,
+                Style = defaults.groupStyle,
+                HeaderStyle = defaults.headerStyle,
+                BodyStyle = defaults.bodyStyle,
+                TintColor = defaults.tintColor
+            };
+
+            var clickable = InternalAPIHelper.GetClickable(foldout.Q<Toggle>());
+            InternalAPIHelper.SetAcceptClicksIfDisabled(clickable, true);
+            BuildElements(property.serializedObject, foldout, property.GetValue<object>(), name => property.FindPropertyRelative(name));
+            foldout.BindProperty(property);
+            return foldout;
         }
     }
 }

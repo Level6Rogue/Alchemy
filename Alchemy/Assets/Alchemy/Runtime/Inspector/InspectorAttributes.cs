@@ -18,7 +18,17 @@ namespace Alchemy.Inspector
     }
 
     [AttributeUsage(AttributeTargets.Method)]
-    public sealed class ButtonAttribute : Attribute { }
+    public sealed class ButtonAttribute : Attribute
+    {
+        public string ButtonText { get; }
+
+        public ButtonAttribute() : base() { }
+
+        public ButtonAttribute(string buttonText = null) : base()
+        {
+            ButtonText = buttonText;
+        }
+    }
 
     [AttributeUsage(AttributeTargets.Field | AttributeTargets.Property)]
     public sealed class ShowInInspectorAttribute : Attribute { }
@@ -211,6 +221,8 @@ namespace Alchemy.Inspector
     [AttributeUsage(AttributeTargets.Field)]
     public sealed class ListViewSettingsAttribute : Attribute
     {
+        public Style Style { get; set; } = 0;
+        public TintColor Color { get; set; } = 0;
         public bool ShowAddRemoveFooter { get; set; } = true;
         public AlternatingRowBackground ShowAlternatingRowBackgrounds { get; set; } = AlternatingRowBackground.None;
         public bool ShowBorder { get; set; } = true;
@@ -233,5 +245,12 @@ namespace Alchemy.Inspector
         public string OnSelectionChanged { get; set; }
         public string OnSelectedIndicesChanged { get; set; }
         
+    }
+    
+    [AttributeUsage(AttributeTargets.Field)]
+    public sealed class PropertyFieldStyleAttribute : Attribute
+    {
+        public Style Style { get; set; } = 0;
+        public TintColor Color { get; set; } = 0;
     }
 }

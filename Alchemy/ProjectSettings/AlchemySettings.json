@@ -1,7 +1,7 @@
-
+{
     "hierarchyObjectMode": 2,
-    "showHierarchyToggles": true,
-    "showComponentIcons": true,
+    "showHierarchyToggles": false,
+    "showComponentIcons": false,
     "showTreeMap": false,
     "treeMapColor": {
         "r": 0.5299999713897705,
@@ -28,5 +28,40 @@
         "g": 0.0,
         "b": 0.0,
         "a": 0.0
+    },
+    "defaultGroupStyle": {
+        "groupStyle": 1,
+        "headerStyle": 1,
+        "bodyStyle": 2,
+        "tintColor": 1,
+        "seperateHeader": false
+    },
+    "defaultBoxGroupStyle": {
+        "groupStyle": 2,
+        "headerStyle": 1,
+        "bodyStyle": 2,
+        "tintColor": 1,
+        "seperateHeader": true
+    },
+    "defaultTabGroupStyle": {
+        "groupStyle": 2,
+        "headerStyle": 2,
+        "bodyStyle": 2,
+        "tintColor": 1,
+        "expandTabs": true
+    },
+    "defaultFoldoutGroupStyle": {
+        "groupStyle": 2,
+        "headerStyle": 1,
+        "bodyStyle": 2,
+        "tintColor": 1,
+        "seperateHeader": true
+    },
+    "defaultClassStyle": {
+        "groupStyle": 1,
+        "headerStyle": 1,
+        "bodyStyle": 1,
+        "tintColor": 1,
+        "seperateHeader": false
     }
 }

@@ -1,67 +1,97 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using UnityEngine;
 using UnityEngine.UIElements;
 using UnityEditor;
-using UnityEditor.UIElements;
 using Alchemy.Inspector;
 using Alchemy.Editor.Elements;
+using Tweaks;
+using UnityEngine;
 
 namespace Alchemy.Editor.Drawers
 {
     [CustomGroupDrawer(typeof(GroupAttribute))]
     public sealed class GroupDrawer : AlchemyGroupDrawer
     {
+        private AlchemyGroup _rootElement;
+
         public override VisualElement CreateRootElement(string label)
         {
-            return new Box()
+            GroupDefaultStyles defaults = AlchemySettings.GetOrCreateSettings().DefaultGroupStyle;
+            
+            _rootElement = new AlchemyGroup
             {
-                style = {
-                    width = Length.Percent(100f),
-                    marginTop = 3f,
-                    paddingBottom = 2f,
-                    paddingRight = 1f,
-                    paddingLeft = 1f,
-                }
+                Title = label,
+                Style = defaults.groupStyle,
+                ShowTitleSeparator = defaults.seperateHeader,
+                HeaderStyle = defaults.headerStyle,
+                BodyStyle = defaults.bodyStyle,
+                TintColor = defaults.tintColor,
             };
+            return _rootElement;
+        }
+
+        public override VisualElement GetGroupElement(Attribute attribute)
+        {
+            if (attribute is not GroupAttribute groupAttribute) 
+                return base.GetGroupElement(attribute);
+            
+            if (!string.IsNullOrEmpty(groupAttribute.Title)) _rootElement.Title = groupAttribute.Title;
+            if (!string.IsNullOrEmpty(groupAttribute.Subtitle)) _rootElement.SubTitle = groupAttribute.Subtitle;
+            if (groupAttribute.ShowTitleSeparator != ShowTitleSeparator.Unset) _rootElement.ShowTitleSeparator = groupAttribute.ShowTitleSeparator == ShowTitleSeparator.Show;
+            
+            if (groupAttribute.Style.GetGroupStyle(out GroupStyle groupStyle)) _rootElement.Style = groupStyle;
+            if (groupAttribute.Style.GetHeaderStyle(out HeaderStyle headerStyle)) _rootElement.HeaderStyle = headerStyle;
+            if (groupAttribute.Style.GetBodyStyle(out BodyStyle bodyStyle)) _rootElement.BodyStyle = bodyStyle;
+            if (groupAttribute.Color != 0) _rootElement.TintColor = groupAttribute.Color;
+
+            return base.GetGroupElement(attribute);
         }
     }
 
     [CustomGroupDrawer(typeof(BoxGroupAttribute))]
     public sealed class BoxGroupDrawer : AlchemyGroupDrawer
     {
+        private AlchemyGroup _rootElement;
+
         public override VisualElement CreateRootElement(string label)
         {
-            var helpBox = new HelpBox()
+            BoxGroupDefaultStyles defaults = AlchemySettings.GetOrCreateSettings().DefaultBoxGroupStyle;
+            
+            _rootElement = new AlchemyGroup
             {
-                text = label,
-                style = {
-                    flexDirection = FlexDirection.Column,
-                    width = Length.Percent(100f),
-                    marginTop = 3f,
-                    paddingBottom = 3f,
-                    paddingRight = 3f,
-                    paddingLeft = 3f,
-                }
+                Title = label,
+                Style = defaults.groupStyle,
+                ShowTitleSeparator = defaults.seperateHeader,
+                HeaderStyle = defaults.headerStyle,
+                BodyStyle = defaults.bodyStyle,
+                TintColor = defaults.tintColor,
             };
+            return _rootElement;
+        }
 
-            var labelElement = helpBox.Q<Label>();
-            labelElement.style.top = 2f;
-            labelElement.style.left = 2f;
-            labelElement.style.fontSize = 12f;
-            labelElement.style.minHeight = EditorGUIUtility.singleLineHeight;
-            labelElement.style.unityFontStyleAndWeight = FontStyle.Bold;
-            labelElement.style.alignSelf = Align.Stretch;
-
-            return helpBox;
+        public override VisualElement GetGroupElement(Attribute attribute)
+        {
+            if (attribute is not BoxGroupAttribute groupAttribute) 
+                return base.GetGroupElement(attribute);
+            
+            if (!string.IsNullOrEmpty(groupAttribute.Title)) _rootElement.Title = groupAttribute.Title;
+            if (!string.IsNullOrEmpty(groupAttribute.Subtitle))  _rootElement.SubTitle = groupAttribute.Subtitle;
+            if (groupAttribute.ShowTitleSeparator != ShowTitleSeparator.Unset) _rootElement.ShowTitleSeparator = groupAttribute.ShowTitleSeparator == ShowTitleSeparator.Show;
+            
+            if (groupAttribute.Style.GetGroupStyle(out GroupStyle groupStyle)) _rootElement.Style = groupStyle;
+            if (groupAttribute.Style.GetHeaderStyle(out HeaderStyle headerStyle)) _rootElement.HeaderStyle = headerStyle;
+            if (groupAttribute.Style.GetBodyStyle(out BodyStyle bodyStyle)) _rootElement.BodyStyle = bodyStyle;
+            if (groupAttribute.Color != 0) _rootElement.TintColor = groupAttribute.Color;
+            
+            return base.GetGroupElement(attribute);
         }
     }
 
     [CustomGroupDrawer(typeof(TabGroupAttribute))]
     public sealed class TabGroupDrawer : AlchemyGroupDrawer
     {
-        VisualElement rootElement;
+        private AlchemyTabView _rootElement;
         readonly Dictionary<string, VisualElement> tabElements = new();
 
         string[] keyArrayCache = new string[0];
@@ -80,69 +110,43 @@ namespace Alchemy.Editor.Drawers
             int.TryParse(EditorUserSettings.GetConfigValue(configKey), out tabIndex);
             prevTabIndex = tabIndex;
 
-            rootElement = new HelpBox()
+            TabGroupDefaultStyles defaults = AlchemySettings.GetOrCreateSettings().DefaultTabGroupStyle;
+
+            _rootElement = new AlchemyTabView
             {
-                style = {
-                    flexDirection = FlexDirection.Column,
-                    width = Length.Percent(100f),
-                    marginTop = 3f,
-                    paddingBottom = 3f,
-                    paddingRight = 3f,
-                    paddingLeft = 3f,
-                }
+                Style = defaults.groupStyle,
+                TabsStyle = defaults.headerStyle,
+                BodyStyle = defaults.bodyStyle,
+                TintColor = defaults.tintColor,
+                ExpandTabs = defaults.expandTabs
             };
-            rootElement.Remove(rootElement.Q<Label>());
 
-            var tabGUIElement = new IMGUIContainer(() =>
-            {
-                var rect = EditorGUILayout.GetControlRect();
-                rect.xMin -= 3.7f;
-                rect.xMax += 3.7f;
-                rect.yMin -= 3.7f;
-                rect.yMax -= 1f;
-                tabIndex = GUI.Toolbar(rect, tabIndex, keyArrayCache);
-                if (tabIndex != prevTabIndex)
-                {
-                    EditorUserSettings.SetConfigValue(configKey, tabIndex.ToString());
-                    prevTabIndex = tabIndex;
-                }
-
-                foreach (var kv in tabElements)
-                {
-                    kv.Value.style.display = keyArrayCache[tabIndex] == kv.Key ? DisplayStyle.Flex : DisplayStyle.None;
-                }
-            })
-            {
-                style = {
-                    width = Length.Percent(100f),
-                    marginLeft = 0f,
-                    marginRight = 0f,
-                    marginTop = 0f
-                }
-            };
-            rootElement.Add(tabGUIElement);
-
-            return rootElement;
+            return _rootElement;
         }
 
         public override VisualElement GetGroupElement(Attribute attribute)
         {
-            var tabGroupAttribute = (TabGroupAttribute)attribute;
+            TabGroupAttribute tabGroupAttribute = (TabGroupAttribute)attribute;
 
             var tabName = tabGroupAttribute.TabName;
             if (!tabElements.TryGetValue(tabName, out var element))
             {
-                element = new VisualElement()
+                element = new Tab
                 {
-                    style = {
-                        width = Length.Percent(100f)
-                    }
+                    label = tabName
                 };
-                rootElement.Add(element);
+                
+                _rootElement.Add(element);
                 tabElements.Add(tabName, element);
 
                 keyArrayCache = tabElements.Keys.ToArray();
             }
+
+            if (tabGroupAttribute.Style.GetHeaderStyle(out HeaderStyle headerStyle))_rootElement.TabsStyle = headerStyle;
+            if (tabGroupAttribute.Style.GetBodyStyle(out BodyStyle bodyStyle)) _rootElement.BodyStyle = bodyStyle;
+            if (tabGroupAttribute.Color != 0) _rootElement.TintColor = tabGroupAttribute.Color;
+            
+            // if (tabGroupAttribute.Style.ExpandTabs != null) _rootElement.ExpandTabs = tabGroupAttribute.Style.ExpandTabs == ExpandTabs.Expand;
 
             return element;
         }
@@ -151,26 +155,43 @@ namespace Alchemy.Editor.Drawers
     [CustomGroupDrawer(typeof(FoldoutGroupAttribute))]
     public sealed class FoldoutGroupDrawer : AlchemyGroupDrawer
     {
+        private AlchemyFoldout _rootElement;
+
         public override VisualElement CreateRootElement(string label)
         {
             var configKey = UniqueId + "_FoldoutGroup";
             bool.TryParse(EditorUserSettings.GetConfigValue(configKey), out var result);
 
-            var foldout = new Foldout()
+            FoldoutGroupDefaultStyles defaults = AlchemySettings.GetOrCreateSettings().DefaultFoldoutGroupStyle;
+
+            _rootElement = new AlchemyFoldout
             {
-                style = {
-                    width = Length.Percent(100f)
-                },
+                Style = defaults.groupStyle,
+                HeaderStyle = defaults.headerStyle,
+                BodyStyle = defaults.bodyStyle,
+                TintColor = defaults.tintColor,
                 text = label,
                 value = result
             };
 
-            foldout.RegisterValueChangedCallback(x =>
+            _rootElement.RegisterValueChangedCallback(x =>
             {
                 EditorUserSettings.SetConfigValue(configKey, x.newValue.ToString());
             });
 
-            return foldout;
+            return _rootElement;
+        }
+
+        public override VisualElement GetGroupElement(Attribute attribute)
+        {
+            FoldoutGroupAttribute groupAttribute = (FoldoutGroupAttribute)attribute;
+
+            if (groupAttribute.GroupStyle != GroupStyle.Unset) _rootElement.Style = groupAttribute.GroupStyle;
+            if (groupAttribute.HeaderStyle != HeaderStyle.Unset) _rootElement.HeaderStyle = groupAttribute.HeaderStyle;
+            if (groupAttribute.BodyStyle != BodyStyle.Unset) _rootElement.BodyStyle = groupAttribute.BodyStyle;
+            if (groupAttribute.TintColor != TintColor.Active) _rootElement.TintColor = groupAttribute.TintColor;
+            
+            return base.GetGroupElement(attribute);
         }
     }
 
@@ -179,47 +200,7 @@ namespace Alchemy.Editor.Drawers
     {
         public override VisualElement CreateRootElement(string label)
         {
-            var root = new VisualElement()
-            {
-                style = {
-                    width = Length.Percent(100f),
-                    flexDirection = FlexDirection.Row
-                }
-            };
-
-            static void AdjustLabel(PropertyField element, VisualElement inspector, int childCount)
-            {
-                if (element.childCount == 0) return;
-                if (element.Q<Foldout>() != null) return;
-
-                var field = element[0];
-                field.RemoveFromClassList("unity-base-field__aligned");
-
-                var labelElement = field.Q<Label>();
-                if (labelElement != null)
-                {
-                    labelElement.style.minWidth = 0f;
-                    labelElement.style.width = GUIHelper.CalculateLabelWidth(element, inspector) * 0.8f / childCount;
-                }
-            }
-
-            root.schedule.Execute(() =>
-            {
-                if (root.childCount <= 1) return;
-
-                var visualTree = root.panel.visualTree;
-
-                foreach (var field in root.Query<PropertyField>().Build())
-                {
-                    AdjustLabel(field, visualTree, root.childCount);
-                }
-                foreach (var field in root.Query<GenericField>().Children<PropertyField>().Build())
-                {
-                    AdjustLabel(field, visualTree, root.childCount);
-                }
-            });
-
-            return root;
+            return new AlchemyHorizontalGroup();
         }
     }
     [CustomGroupDrawer(typeof(InlineGroupAttribute))]

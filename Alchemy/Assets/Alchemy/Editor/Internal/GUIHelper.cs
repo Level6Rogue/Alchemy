@@ -1,5 +1,6 @@
 using System;
 using System.Reflection;
+using Alchemy.Editor.Elements;
 using UnityEditor;
 using UnityEditor.UIElements;
 using UnityEngine;
@@ -38,7 +39,9 @@ namespace Alchemy.Editor
 
         public static ListView CreateDefaultListView(string label)
         {
-            return new ListView()
+            ListViewDefaults defaults = AlchemySettings.GetOrCreateSettings().DefaultListViewStyle;
+            
+            AlchemyListView defaultListView = new()
             {
                 reorderable = true,
                 reorderMode = ListViewReorderMode.Animated,
@@ -48,26 +51,40 @@ namespace Alchemy.Editor
                 showAddRemoveFooter = true,
                 fixedItemHeight = 20f,
                 virtualizationMethod = CollectionVirtualizationMethod.DynamicHeight,
-                showAlternatingRowBackgrounds = AlternatingRowBackground.None,
+                showAlternatingRowBackgrounds = defaults.alternatingRowBackground,
             };
+
+            defaultListView.Style = defaults.groupStyle;
+            defaultListView.HeaderStyle = defaults.headerStyle;
+            defaultListView.BodyStyle = defaults.bodyStyle;
+            defaultListView.TintColor = defaults.tintColor;
+
+            return defaultListView;
         }
 
         public static ListView CreateListViewFromFieldInfo(object target, FieldInfo fieldInfo)
         {
-            var settings = fieldInfo.GetCustomAttribute<ListViewSettingsAttribute>();
-            var listView = new ListView
+            ListViewDefaults defaults = AlchemySettings.GetOrCreateSettings().DefaultListViewStyle;
+            ListViewSettingsAttribute settings = fieldInfo.GetCustomAttribute<ListViewSettingsAttribute>();
+
+            AlchemyListView listView = new AlchemyListView
             {
-                reorderable = settings == null ? true : settings.Reorderable,
-                reorderMode = settings == null ? ListViewReorderMode.Animated : settings.ReorderMode,
-                showBorder = settings == null ? true : settings.ShowBorder,
-                showFoldoutHeader = settings == null ? true : settings.ShowFoldoutHeader,
-                showBoundCollectionSize = settings == null ? true : (settings.ShowFoldoutHeader && settings.ShowBoundCollectionSize),
-                selectionType = settings == null ? SelectionType.Multiple : settings.SelectionType,
-                showAddRemoveFooter = settings == null ? true : settings.ShowAddRemoveFooter,
-                fixedItemHeight = 20f,
-                virtualizationMethod = CollectionVirtualizationMethod.DynamicHeight,
-                showAlternatingRowBackgrounds = settings == null ? AlternatingRowBackground.None : settings.ShowAlternatingRowBackgrounds,
+                // reorderable = settings == null ? true : settings.Reorderable,
+                // reorderMode = settings == null ? ListViewReorderMode.Animated : settings.ReorderMode,
+                // showBorder = settings == null ? true : settings.ShowBorder,
+                // showFoldoutHeader = settings == null ? true : settings.ShowFoldoutHeader,
+                // showBoundCollectionSize = settings == null ? true : (settings.ShowFoldoutHeader && settings.ShowBoundCollectionSize),
+                // selectionType = settings == null ? SelectionType.Multiple : settings.SelectionType,
+                // showAddRemoveFooter = settings == null ? true : settings.ShowAddRemoveFooter,
+                // fixedItemHeight = 20f,
+                // virtualizationMethod = CollectionVirtualizationMethod.DynamicHeight,
+                // showAlternatingRowBackgrounds = settings?.ShowAlternatingRowBackgrounds ?? defaults.alternatingRowBackground,
             };
+
+            // listView.Style = settings?.Style.GetGroupStyle(out GroupStyle style) == true ? style : defaults.groupStyle;
+            // listView.HeaderStyle = settings?.Style.GetHeaderStyle(out HeaderStyle headerStyle) == true ? headerStyle : defaults.headerStyle;
+            // listView.BodyStyle = settings?.Style.GetBodyStyle(out BodyStyle bodyStyle) == true ? bodyStyle : defaults.bodyStyle;
+            // listView.TintColor = settings != null && settings?.Color != 0 ? settings.Color : defaults.tintColor;
 
             var events = fieldInfo.GetCustomAttribute<OnListViewChangedAttribute>();
             if (events != null)

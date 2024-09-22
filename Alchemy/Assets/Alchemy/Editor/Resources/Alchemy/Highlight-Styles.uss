@@ -1,0 +1,263 @@
+.highlight-color-active-title {
+    background-color: var(--group-colors-highlight-active-title);
+}
+
+.highlight-color-active-background {
+    background-color: var(--group-colors-highlight-active-background);
+}
+
+.highlight-color-active-button:checked {
+    background-color: var(--group-colors-highlight-active-title);
+}
+
+.highlight-color-active-button:checked:hover {
+    background-color: var(--group-colors-highlight-active-background);
+}
+
+.highlight-color-active-foldout-header {
+    background-color: var(--group-colors-highlight-active-title);
+}
+
+.highlight-color-active-foldout-header:hover {
+    background-color: var(--group-colors-highlight-active-background);
+}
+
+.highlight-color-red-title {
+    background-color: var(--group-colors-highlight-red-title);
+}
+
+.highlight-color-red-background {
+    background-color: var(--group-colors-highlight-red-background);
+}
+
+.highlight-color-red-button:checked {
+    background-color: var(--group-colors-highlight-red-title);
+}
+
+.highlight-color-red-button:checked:hover {
+    background-color: var(--group-colors-highlight-red-background);
+}
+
+.highlight-color-red-foldout-header {
+    background-color: var(--group-colors-highlight-red-title);
+}
+
+.highlight-color-red-foldout-header:hover {
+    background-color: var(--group-colors-highlight-red-background);
+}
+
+.highlight-color-green-title {
+    background-color: var(--group-colors-highlight-green-title);
+}
+
+.highlight-color-green-background {
+    background-color: var(--group-colors-highlight-green-background);
+}
+
+.highlight-color-green-button:checked {
+    background-color: var(--group-colors-highlight-green-title);
+}
+
+.highlight-color-green-button:checked:hover {
+    background-color: var(--group-colors-highlight-green-background);
+}
+
+.highlight-color-green-foldout-header {
+    background-color: var(--group-colors-highlight-green-title);
+}
+
+.highlight-color-green-foldout-header:hover {
+    background-color: var(--group-colors-highlight-green-background);
+}
+
+.highlight-color-blue-title {
+    background-color: var(--group-colors-highlight-blue-title);
+}
+
+.highlight-color-blue-background {
+    background-color: var(--group-colors-highlight-blue-background);
+}
+
+.highlight-color-blue-button:checked {
+    background-color: var(--group-colors-highlight-blue-title);
+}
+
+.highlight-color-blue-button:checked:hover {
+    background-color: var(--group-colors-highlight-blue-background);
+}
+
+.highlight-color-blue-foldout-header {
+    background-color: var(--group-colors-highlight-blue-title);
+}
+
+.highlight-color-blue-foldout-header:hover {
+    background-color: var(--group-colors-highlight-blue-background);
+}
+
+.highlight-color-cyan-title {
+    background-color: var(--group-colors-highlight-cyan-title);
+}
+
+.highlight-color-cyan-background {
+    background-color: var(--group-colors-highlight-cyan-background);
+}
+
+.highlight-color-cyan-button:checked {
+    background-color: var(--group-colors-highlight-cyan-title);
+}
+
+.highlight-color-cyan-button:checked:hover {
+    background-color: var(--group-colors-highlight-cyan-background);
+}
+
+.highlight-color-cyan-foldout-header {
+    background-color: var(--group-colors-highlight-cyan-title);
+}
+
+.highlight-color-cyan-foldout-header:hover {
+    background-color: var(--group-colors-highlight-cyan-background);
+}
+
+.highlight-color-yellow-title {
+    background-color: var(--group-colors-highlight-yellow-title);
+}
+
+.highlight-color-yellow-background {
+    background-color: var(--group-colors-highlight-yellow-background);
+}
+
+.highlight-color-yellow-button:checked {
+    background-color: var(--group-colors-highlight-yellow-title);
+}
+
+.highlight-color-yellow-button:checked:hover {
+    background-color: var(--group-colors-highlight-yellow-background);
+}
+
+.highlight-color-yellow-foldout-header {
+    background-color: var(--group-colors-highlight-yellow-title);
+}
+
+.highlight-color-yellow-foldout-header:hover {
+    background-color: var(--group-colors-highlight-yellow-background);
+}
+
+.highlight-color-orange-title {
+    background-color: var(--group-colors-highlight-orange-title);
+}
+
+.highlight-color-orange-background {
+    background-color: var(--group-colors-highlight-orange-background);
+}
+
+.highlight-color-orange-button:checked {
+    background-color: var(--group-colors-highlight-orange-title);
+}
+
+.highlight-color-orange-button:checked:hover {
+    background-color: var(--group-colors-highlight-orange-background);
+}
+
+.highlight-color-orange-foldout-header {
+    background-color: var(--group-colors-highlight-orange-title);
+}
+
+.highlight-color-orange-foldout-header:hover {
+    background-color: var(--group-colors-highlight-orange-background);
+}
+
+.highlight-color-purple-title {
+    background-color: var(--group-colors-highlight-purple-title);
+}
+
+.highlight-color-purple-background {
+    background-color: var(--group-colors-highlight-purple-background);
+}
+
+.highlight-color-purple-button:checked {
+    background-color: var(--group-colors-highlight-purple-title);
+}
+
+.highlight-color-purple-button:checked:hover {
+    background-color: var(--group-colors-highlight-purple-background);
+}
+
+.highlight-color-purple-foldout-header {
+    background-color: var(--group-colors-highlight-purple-title);
+}
+
+.highlight-color-purple-foldout-header:hover {
+    background-color: var(--group-colors-highlight-purple-background);
+}
+
+.highlight-color-pink-title {
+    background-color: var(--group-colors-highlight-pink-title);
+}
+
+.highlight-color-pink-background {
+    background-color: var(--group-colors-highlight-pink-background);
+}
+
+.highlight-color-pink-button:checked {
+    background-color: var(--group-colors-highlight-pink-title);
+}
+
+.highlight-color-pink-button:checked:hover {
+    background-color: var(--group-colors-highlight-pink-background);
+}
+
+.highlight-color-pink-foldout-header {
+    background-color: var(--group-colors-highlight-pink-title);
+}
+
+.highlight-color-pink-foldout-header:hover {
+    background-color: var(--group-colors-highlight-pink-background);
+}
+
+.highlight-color-brown-title {
+    background-color: var(--group-colors-highlight-brown-title);
+}
+
+.highlight-color-brown-background {
+    background-color: var(--group-colors-highlight-brown-background);
+}
+
+.highlight-color-brown-button:checked {
+    background-color: var(--group-colors-highlight-brown-title);
+}
+
+.highlight-color-brown-button:checked:hover {
+    background-color: var(--group-colors-highlight-brown-background);
+}
+
+.highlight-color-brown-foldout-header {
+    background-color: var(--group-colors-highlight-brown-title);
+}
+
+.highlight-color-brown-foldout-header:hover {
+    background-color: var(--group-colors-highlight-brown-background);
+}
+
+.highlight-color-gray-title {
+    background-color: var(--group-colors-highlight-gray-title);
+}
+
+.highlight-color-gray-background {
+    background-color: var(--group-colors-highlight-gray-background);
+}
+
+.highlight-color-gray-button:checked {
+    background-color: var(--group-colors-highlight-gray-title);
+}
+
+.highlight-color-gray-button:checked:hover {
+    background-color: var(--group-colors-highlight-gray-background);
+}
+
+.highlight-color-gray-foldout-header {
+    background-color: var(--group-colors-highlight-gray-title);
+}
+
+.highlight-color-gray-foldout-header:hover {
+    background-color: var(--group-colors-highlight-gray-background);
+}

@@ -201,7 +201,7 @@ namespace Alchemy.Editor
                 return result;
             }
 
-            throw new ArgumentException($"Can't parse {arrayOrListObj.GetType()} as Array or List");
+            throw new ArgumentException($"Can't parse {(arrayOrListObj != null ? arrayOrListObj.GetType() : "null")} as Array or List");
         }
 
         public static object GetParentObject(this SerializedProperty property)

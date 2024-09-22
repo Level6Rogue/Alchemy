@@ -1,5 +1,6 @@
 using System;
 using System.Linq;
+using Alchemy.Inspector;
 using UnityEditor;
 using UnityEditor.UIElements;
 using UnityEditor.IMGUI.Controls;
@@ -12,115 +13,130 @@ namespace Alchemy.Editor.Elements
     /// <summary>
     /// Draw properties marked with SerializeReference attribute
     /// </summary>
-    public sealed class SerializeReferenceField : VisualElement
+    [UxmlElement]
+    public sealed partial class SerializeReferenceField : AlchemyFoldout
     {
-        public SerializeReferenceField(SerializedProperty property)
+        private readonly StyleSheet _styleSheet = Resources.Load<StyleSheet>("Elements/SerializeReferenceField-Styles");
+        
+        private readonly Button _pickReferenceButton;
+
+        private SerializedProperty _property;
+
+        public SerializeReferenceField()
         {
-            Assert.IsTrue(property.propertyType == SerializedPropertyType.ManagedReference);
+            styleSheets.Add(_styleSheet);
+            
+            AddToClassList("alchemy-serialize-reference__foldout");
+            contentContainer.AddToClassList("alchemy-serialize-reference__content");
 
-            style.flexDirection = FlexDirection.Row;
-            style.minHeight = EditorGUIUtility.singleLineHeight + EditorGUIUtility.standardVerticalSpacing;
-
-            foldout = new Foldout()
+            _pickReferenceButton = new Button(OnClick)
             {
-                text = ObjectNames.NicifyVariableName(property.displayName)
+                text = "null()",
+                iconImage = (Background)EditorIcons.CsScriptIcon.image
             };
-            foldout.style.flexGrow = 1f;
-            foldout.BindProperty(property);
-            Add(foldout);
+            
+            _pickReferenceButton.AddToClassList("alchemy-serialize-reference__pick-reference-button");
 
-            buttonContainer = new IMGUIContainer(() =>
-            {
-                var position = EditorGUILayout.GetControlRect();
-
-                var dropdownRect = position;
-                dropdownRect.height = EditorGUIUtility.singleLineHeight;
-
-                var buttonLabel = EditorIcons.CsScriptIcon;
-
-                try
-                {
-                    if (property != null)
-                    {
-                        buttonLabel.text = (property.managedReferenceValue == null ? "Null" : property.managedReferenceValue.GetType().Name) +
-                            $" ({property.GetManagedReferenceFieldTypeName()})";
-                    }
-                }
-                catch (InvalidOperationException)
-                {
-                    // Ignoring exceptions when disposed (bad solution)
-                    return;
-                }
-
-                if (GUI.Button(dropdownRect, buttonLabel, EditorStyles.objectField))
-                {
-                    const int MaxTypePopupLineCount = 13;
-
-                    var baseType = property.GetManagedReferenceFieldType();
-                    SerializeReferenceDropdown dropdown = new(
-                        TypeCache.GetTypesDerivedFrom(baseType).Append(baseType).Where(t =>
-                            (t.IsPublic || t.IsNestedPublic) &&
-                            !t.IsAbstract &&
-                            !t.IsGenericType &&
-                            !typeof(UnityEngine.Object).IsAssignableFrom(t) &&
-                            t.IsSerializable
-                        ),
-                        MaxTypePopupLineCount,
-                        new AdvancedDropdownState()
-                    );
-
-                    dropdown.onItemSelected += item =>
-                    {
-                        property.SetManagedReferenceType(item.type);
-                        property.isExpanded = true;
-                        property.serializedObject.ApplyModifiedProperties();
-                        property.serializedObject.Update();
-
-                        Rebuild(property);
-                    };
-
-                    dropdown.Show(position);
-                }
-            });
-
+            GroupBase.Header.Add(_pickReferenceButton);
+            
             schedule.Execute(() =>
             {
-                var visualTree = panel.visualTree;
-                visualTree.RegisterCallback<GeometryChangedEvent>(x =>
+                RegisterCallback<GeometryChangedEvent>(_ => SetWidth());
+                SetWidth();
+                
+                void SetWidth()
                 {
-                    buttonContainer.style.width = GUIHelper.CalculateFieldWidth(buttonContainer, visualTree) -
-                        (buttonContainer.GetFirstAncestorOfType<Foldout>() != null ? 18f : 0f);
-                });
-                buttonContainer.style.width = GUIHelper.CalculateFieldWidth(buttonContainer, visualTree) -
-                    (buttonContainer.GetFirstAncestorOfType<Foldout>() != null ? 18f : 0f);
+                    _pickReferenceButton.style.width = GUIHelper.CalculateFieldWidth(_pickReferenceButton, panel.visualTree) -
+                                                       (_pickReferenceButton.GetFirstAncestorOfType<Foldout>() != null ? 18f : 0f);
+                }
             });
+        }
+        
+        public SerializeReferenceField(SerializedProperty property) : this() => BindField(property);
 
-            buttonContainer.style.position = Position.Absolute;
-            buttonContainer.style.top = EditorGUIUtility.standardVerticalSpacing * 0.5f;
-            buttonContainer.style.right = 0f;
-            Add(buttonContainer);
+        public void BindField(SerializedProperty property)
+        {
+            _property = property;
+            
+            Assert.IsTrue(property.propertyType == SerializedPropertyType.ManagedReference);
 
+            text = ObjectNames.NicifyVariableName(property.displayName);
+            
+            this.BindProperty(property);
+            
             Rebuild(property);
         }
+        
+        private void OnClick()
+        {
+            if (_property == null) 
+                return;
+            
+            const int MaxTypePopupLineCount = 13;
+            
+            var baseType = _property.GetManagedReferenceFieldType();
+            SerializeReferenceDropdown dropdown = new(
+                TypeCache.GetTypesDerivedFrom(baseType).Append(baseType).Where(t =>
+                    (t.IsPublic || t.IsNestedPublic) &&
+                    !t.IsAbstract &&
+                    !t.IsGenericType &&
+                    !typeof(UnityEngine.Object).IsAssignableFrom(t) &&
+                    t.IsSerializable
+                ),
+                MaxTypePopupLineCount,
+                new AdvancedDropdownState()
+            );
+            
+            dropdown.onItemSelected += item =>
+            {
+                _property.SetManagedReferenceType(item.type);
+                _property.isExpanded = true;
+                _property.serializedObject.ApplyModifiedProperties();
+                _property.serializedObject.Update();
+            
+                Rebuild(_property);
+            };
 
-        public readonly Foldout foldout;
-        public readonly IMGUIContainer buttonContainer;
+            dropdown.Show(_pickReferenceButton.worldBound);
+        }
 
         /// <summary>
         /// Rebuild child elements
         /// </summary>
         void Rebuild(SerializedProperty property)
         {
-            foldout.Clear();
+            try
+            {
+                if (_property != null)
+                {
+                    string typeName = _property.managedReferenceValue == null
+                        ? "Null"
+                        : _property.managedReferenceValue.GetType().Name;
+
+                    _pickReferenceButton.text = $"{typeName} ({_property.GetManagedReferenceFieldTypeName()})";
+                }
+            }
+            catch (InvalidOperationException)
+            {
+                // Ignoring exceptions when disposed (bad solution)
+                return;
+            }
+            
+            Clear();
 
             if (property.managedReferenceValue == null)
             {
-                var helpbox = new HelpBox("No type assigned.", HelpBoxMessageType.Info);
-                foldout.Add(helpbox);
+                HelpBox helpbox = new("No type assigned.", HelpBoxMessageType.Info);
+
+                helpbox.AddToClassList("alchemy-serialize-reference__helpbox");
+                helpbox.EnableInClassList("alchemy-serialize-reference__helpbox--boxed", Style == GroupStyle.Boxed);
+
+                Add(helpbox);
             }
             else
             {
-                InspectorHelper.BuildElements(property.serializedObject, foldout, property.managedReferenceValue, x => property.FindPropertyRelative(x));
+                InspectorHelper.BuildElements(property.serializedObject, this, property.managedReferenceValue,
+                    x => property.FindPropertyRelative(x));
             }
 
             this.Bind(property.serializedObject);

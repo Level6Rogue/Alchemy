@@ -7,7 +7,7 @@ using System.Linq.Expressions;
 
 namespace Alchemy.Editor
 {
-    internal static class ReflectionHelper
+    public static class ReflectionHelper
     {
         static readonly Dictionary<(Type, string, BindingFlags, bool), FieldInfo> cacheFieldInfo = new();
         static readonly Dictionary<(Type, string, BindingFlags, bool), MethodInfo> cacheMethodInfo = new();
